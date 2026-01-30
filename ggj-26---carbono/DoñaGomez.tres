@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="NPCBase" format=3 uid="uid://c45mqky55i50s"]
 
 [ext_resource type="Script" uid="uid://dfr20ax0wgldd" path="res://NPCBase.gd" id="1_pno65"]
+[ext_resource type="Texture2D" uid="uid://c6to428c31jfv" path="res://icon.svg" id="2_fyucx"]
 
 [resource]
 script = ExtResource("1_pno65")
-name = null
 frasesVerdad = ["", null, null]
+sprite = ExtResource("2_fyucx")
 metadata/_custom_type_script = "uid://dfr20ax0wgldd"

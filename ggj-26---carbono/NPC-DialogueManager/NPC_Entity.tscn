@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://tqiu5x8ot720"]
+
+[ext_resource type="Texture2D" uid="uid://cx5yjy4fn86sd" path="res://Assets/pj_cute.png" id="1_otedj"]
+[ext_resource type="Script" uid="uid://csih4iv4a78n4" path="res://NPC-DialogueManager/NPC_Entity.gd" id="1_wajoj"]
+[ext_resource type="Resource" uid="uid://cy870ikjlk4ls" path="res://NPC-DialogueManager/NPC1.dialogue" id="2_4x4rb"]
+[ext_resource type="Texture2D" uid="uid://dgx33utipkwdt" path="res://Assets/UI/exclamation.png" id="2_6qnqm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6qnqm"]
+radius = 30.0
+height = 122.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wajoj"]
+radius = 156.02884
+
+[node name="NPC_Entity" type="CharacterBody2D" unique_id=1304542090]
+script = ExtResource("1_wajoj")
+dialogue = ExtResource("2_4x4rb")
+
+[node name="Outline" type="Sprite2D" parent="." unique_id=604727558]
+visible = false
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+scale = Vector2(0.56200004, 0.53999996)
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1359436904]
+scale = Vector2(0.5, 0.508)
+texture = ExtResource("1_otedj")
+
+[node name="Exclamation" type="Sprite2D" parent="." unique_id=737269602]
+visible = false
+position = Vector2(0, -99)
+texture = ExtResource("2_6qnqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108838398]
+shape = SubResource("CapsuleShape2D_6qnqm")
+
+[node name="PlayerDetectionArea" type="Area2D" parent="." unique_id=568812205]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea" unique_id=455055143]
+shape = SubResource("CircleShape2D_wajoj")
+
+[node name="IdleStateTimer" type="Timer" parent="." unique_id=734694831]
+wait_time = 5.0
+
+[connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]
+[connection signal="body_exited" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_exited"]
+[connection signal="timeout" from="IdleStateTimer" to="." method="_on_idle_state_timer_timeout"]

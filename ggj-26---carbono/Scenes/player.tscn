@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ehkex"]
 radius = 52.086468
 
-[node name="Player" type="CharacterBody2D" unique_id=1591695807]
+[node name="Player" type="CharacterBody2D" unique_id=1591695807 groups=["Player"]]
 script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=889437486]

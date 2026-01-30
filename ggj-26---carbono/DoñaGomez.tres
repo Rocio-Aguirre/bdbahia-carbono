@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NPCBase" format=3 uid="uid://c45mqky55i50s"]
+
+[ext_resource type="Script" uid="uid://dfr20ax0wgldd" path="res://NPCBase.gd" id="1_pno65"]
+
+[resource]
+script = ExtResource("1_pno65")
+name = null
+frasesVerdad = ["", null, null]
+metadata/_custom_type_script = "uid://dfr20ax0wgldd"

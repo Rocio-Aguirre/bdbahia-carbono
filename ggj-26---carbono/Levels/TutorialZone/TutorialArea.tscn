@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://ddym6d7riyebj" path="res://Scenes/interactable_area.tscn" id="3_2juyx"]
 [ext_resource type="PackedScene" uid="uid://bbsmoxpmklqy1" path="res://Scenes/ui.tscn" id="3_xjk1r"]
 [ext_resource type="Resource" uid="uid://cmp47bvv5cd7" path="res://Levels/TutorialZone/GuardDialogue.dialogue" id="4_0v3t4"]
-[ext_resource type="Texture2D" uid="uid://decsdnl2wisad" path="res://Assets/square_ref.png" id="4_cwgqs"]
 [ext_resource type="Texture2D" uid="uid://d3r3jtdf6awfm" path="res://Assets/UI/fastForward.png" id="4_w5ptq"]
 [ext_resource type="Texture2D" uid="uid://c6to428c31jfv" path="res://icon.svg" id="5_w5ptq"]
 [ext_resource type="Resource" uid="uid://ddhqqngcflbek" path="res://Levels/TutorialZone/LyingMaskDialogue.dialogue" id="6_xkp16"]
@@ -14,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://drvg0pcwry2wa" path="res://Scenes/door_area.tscn" id="8_xoxvr"]
 [ext_resource type="PackedScene" uid="uid://ci2xcwyh7132t" path="res://Levels/MansionHall/MansionHall.tscn" id="9_0t77p"]
 [ext_resource type="AudioStream" uid="uid://fyoyiq57djrc" path="res://Audio/moving-stone.mp3" id="11_xoxvr"]
+[ext_resource type="Texture2D" uid="uid://b12t75oflarmo" path="res://Assets/NPCs/Guard.png" id="12_0t77p"]
 
 [node name="TutorialZone" type="Node2D" unique_id=333116170]
 script = ExtResource("1_l2nnh")
@@ -105,9 +105,10 @@ DestinationScene = ExtResource("9_0t77p")
 [node name="Characters" type="Node2D" parent="." unique_id=314058152]
 
 [node name="Guardia" parent="Characters" unique_id=1304542090 instance=ExtResource("3_0v3t4")]
-position = Vector2(1354, 773)
+position = Vector2(1392, 749)
+scale = Vector2(0.5, 0.5)
 dialogue = ExtResource("4_0v3t4")
-texture = ExtResource("4_cwgqs")
+texture = ExtResource("12_0t77p")
 
 [node name="SlideSound" type="AudioStreamPlayer2D" parent="Characters/Guardia" unique_id=706269594]
 stream = ExtResource("11_xoxvr")

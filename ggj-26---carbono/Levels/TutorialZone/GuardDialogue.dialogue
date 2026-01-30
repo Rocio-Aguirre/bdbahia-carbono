@@ -1,0 +1,29 @@
+~ start
+if GlobalData.tutorial_finished == true:
+	Guardia: ... => END!
+Guardia: Bienvenido a la fiesta de mascaras
+if GlobalData.current_mask == GlobalData.MaskState.MASKLESS:
+	Guardia: Lamentablemente, no te puedo dejar pasar si no tenes una mascara puesta...
+	Guardia: Convenientemente, tengo una aqui para darte [wave] jejej
+	- Tomar Mascara 
+		Has obtenido la mascara de la verdad
+		do GlobalData.equip_mask()
+		=> END
+	# aca metemos codigo para cambiar el sprite
+elif GlobalData.current_mask == GlobalData.MaskState.TRUTH_MASK:
+	Guardia: Guau, te queda muy bien!
+	Guardia: Ahora dime, [wave] Estas realmente invitado a esta fiesta? 
+	- No, lo siento.
+		Guardia: Pues que lastima, no puedo dejarte entrar...
+		do GlobalData.corridor_enabled.emit()
+		=> END
+elif GlobalData.current_mask == GlobalData.MaskState.LYING_MASK:
+	Guardia: Hola nuevamente, te vuelvo a preguntar...
+	Guardia: [wave] Estas realmente invitado a esta fiesta?
+	- (Mentir) Si, lo estoy.
+		Guardia: Ah bueno, pasa nomas.
+		do GlobalData.end_tutorial.emit()
+		set GlobalData.tutorial_finished = true
+		=> END
+
+=> END

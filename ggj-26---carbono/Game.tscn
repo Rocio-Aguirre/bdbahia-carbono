@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://q1ve558oap1k"]
+
+[ext_resource type="PackedScene" uid="uid://bbsmoxpmklqy1" path="res://Scenes/ui.tscn" id="1_joorw"]
+[ext_resource type="Script" uid="uid://dscmgylp7mrhj" path="res://game.gd" id="1_u44n3"]
+[ext_resource type="PackedScene" uid="uid://dsehlvm0m78f3" path="res://Scenes/player.tscn" id="2_2vekm"]
+
+[node name="Game" type="Node2D" unique_id=333116170]
+script = ExtResource("1_u44n3")
+
+[node name="Map" type="Node2D" parent="." unique_id=1497239700]
+
+[node name="Backdrop" type="ColorRect" parent="Map" unique_id=162746286]
+offset_left = -1560.0
+offset_top = -1953.0
+offset_right = 2597.0
+offset_bottom = 990.0
+color = Color(0.02950659, 0.029506551, 0.029506536, 1)
+
+[node name="Floor" type="ColorRect" parent="Map" unique_id=39217478]
+offset_left = 357.0
+offset_top = 280.0
+offset_right = 712.0
+offset_bottom = 629.0
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[node name="Floor2" type="ColorRect" parent="Map" unique_id=895835751]
+offset_left = 422.0
+offset_top = -602.0
+offset_right = 638.0
+offset_bottom = 328.0
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[node name="Floor3" type="ColorRect" parent="Map" unique_id=924265103]
+offset_left = 147.0
+offset_top = -1124.0
+offset_right = 924.0
+offset_bottom = -543.0
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[node name="AfterGuardTalkRoom" type="Node2D" parent="Map/Floor3" unique_id=428925840]
+visible = false
+
+[node name="Floor4" type="ColorRect" parent="Map/Floor3/AfterGuardTalkRoom" unique_id=13246873]
+offset_left = 763.0
+offset_top = 187.0
+offset_right = 1305.0
+offset_bottom = 412.0
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[node name="Floor5" type="ColorRect" parent="Map/Floor3/AfterGuardTalkRoom" unique_id=551543530]
+offset_left = 1291.0
+offset_top = 38.0
+offset_right = 1833.0
+offset_bottom = 518.0
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[node name="Player" parent="." unique_id=1591695807 instance=ExtResource("2_2vekm")]
+position = Vector2(523, 442)
+
+[node name="UI" parent="." unique_id=401532264 instance=ExtResource("1_joorw")]

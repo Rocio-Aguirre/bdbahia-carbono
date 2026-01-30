@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cmp47bvv5cd7"
+path="res://.godot/imported/GuardDialogue.dialogue-32c55f61fa70f07271e23c4c3e998a98.tres"
+
+[deps]
+
+source_file="res://Levels/TutorialZone/GuardDialogue.dialogue"
+dest_files=["res://.godot/imported/GuardDialogue.dialogue-32c55f61fa70f07271e23c4c3e998a98.tres"]
+
+[params]
+
+defaults=true

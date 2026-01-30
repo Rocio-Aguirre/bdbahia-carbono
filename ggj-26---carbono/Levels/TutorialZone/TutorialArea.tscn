@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://ooynekjrowa4"]
+
+[ext_resource type="Script" uid="uid://dscmgylp7mrhj" path="res://game.gd" id="1_l2nnh"]
+[ext_resource type="PackedScene" uid="uid://dsehlvm0m78f3" path="res://Scenes/player.tscn" id="2_7osrd"]
+[ext_resource type="PackedScene" uid="uid://tqiu5x8ot720" path="res://NPC-DialogueManager/NPC_Entity.tscn" id="3_0v3t4"]
+[ext_resource type="PackedScene" uid="uid://ddym6d7riyebj" path="res://Scenes/interactable_area.tscn" id="3_2juyx"]
+[ext_resource type="PackedScene" uid="uid://bbsmoxpmklqy1" path="res://Scenes/ui.tscn" id="3_xjk1r"]
+[ext_resource type="Resource" uid="uid://cmp47bvv5cd7" path="res://Levels/TutorialZone/GuardDialogue.dialogue" id="4_0v3t4"]
+[ext_resource type="Texture2D" uid="uid://decsdnl2wisad" path="res://Assets/square_ref.png" id="4_cwgqs"]
+[ext_resource type="Texture2D" uid="uid://d3r3jtdf6awfm" path="res://Assets/UI/fastForward.png" id="4_w5ptq"]
+[ext_resource type="Texture2D" uid="uid://c6to428c31jfv" path="res://icon.svg" id="5_w5ptq"]
+[ext_resource type="Resource" uid="uid://ddhqqngcflbek" path="res://Levels/TutorialZone/LyingMaskDialogue.dialogue" id="6_xkp16"]
+[ext_resource type="AudioStream" uid="uid://cnmu0pwk8gjfn" path="res://Audio/Piano  Mascaras vals.wav" id="7_itvy5"]
+[ext_resource type="AudioStream" uid="uid://fyoyiq57djrc" path="res://Audio/moving-stone.mp3" id="11_xoxvr"]
+
+[node name="Game" type="Node2D" unique_id=333116170]
+script = ExtResource("1_l2nnh")
+
+[node name="UI" parent="." unique_id=401532264 instance=ExtResource("3_xjk1r")]
+
+[node name="Map" type="Node2D" parent="." unique_id=1497239700]
+
+[node name="Backdrop" type="ColorRect" parent="Map" unique_id=162746286]
+offset_left = -1560.0
+offset_top = -1953.0
+offset_right = 2597.0
+offset_bottom = 990.0
+color = Color(0.02950659, 0.029506551, 0.029506536, 1)
+
+[node name="Floor" type="ColorRect" parent="Map" unique_id=39217478]
+offset_left = 357.0
+offset_top = 280.0
+offset_right = 712.0
+offset_bottom = 629.0
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[node name="Floor2" type="ColorRect" parent="Map" unique_id=895835751]
+offset_left = 422.0
+offset_top = -602.0
+offset_right = 638.0
+offset_bottom = 328.0
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[node name="Floor3" type="ColorRect" parent="Map" unique_id=924265103]
+offset_left = 147.0
+offset_top = -1124.0
+offset_right = 924.0
+offset_bottom = -543.0
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[node name="Door" type="ColorRect" parent="Map" unique_id=1320743420]
+offset_left = 423.0
+offset_top = -1424.0
+offset_right = 635.0
+offset_bottom = -1128.0
+color = Color(0.14044744, 0.14044744, 0.14044744, 1)
+
+[node name="Corridor" type="Node2D" parent="Map" unique_id=428925840]
+visible = false
+position = Vector2(147, -1124)
+
+[node name="Floor4" type="ColorRect" parent="Map/Corridor" unique_id=13246873]
+offset_left = 763.0
+offset_top = 187.0
+offset_right = 1305.0
+offset_bottom = 412.0
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[node name="Floor5" type="ColorRect" parent="Map/Corridor" unique_id=551543530]
+offset_left = 1291.0
+offset_top = 38.0
+offset_right = 1833.0
+offset_bottom = 518.0
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[node name="Arrow" type="Sprite2D" parent="Map/Corridor" unique_id=1457308570]
+position = Vector2(853.0001, 292)
+scale = Vector2(2.3, 2.36)
+texture = ExtResource("4_w5ptq")
+
+[node name="LyingMask" parent="Map/Corridor" unique_id=406048012 instance=ExtResource("3_2juyx")]
+modulate = Color(1, 0, 0.07058824, 1)
+position = Vector2(1563, 292)
+rotation = 1.2444198
+texture = ExtResource("5_w5ptq")
+dialogue = ExtResource("6_xkp16")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="Map" unique_id=1162275983]
+position = Vector2(510, -1906)
+stream = ExtResource("7_itvy5")
+autoplay = true
+attenuation = 3.6050022
+
+[node name="Characters" type="Node2D" parent="." unique_id=314058152]
+
+[node name="Guardia" parent="Characters" unique_id=1304542090 instance=ExtResource("3_0v3t4")]
+position = Vector2(526, -1138)
+dialogue = ExtResource("4_0v3t4")
+texture = ExtResource("4_cwgqs")
+
+[node name="SlideSound" type="AudioStreamPlayer2D" parent="Characters/Guardia" unique_id=706269594]
+stream = ExtResource("11_xoxvr")
+
+[node name="Player" parent="Characters" unique_id=1591695807 instance=ExtResource("2_7osrd")]
+position = Vector2(523, 442)
+
+[connection signal="finished" from="Map/BackgroundMusic" to="." method="_on_background_music_finished"]

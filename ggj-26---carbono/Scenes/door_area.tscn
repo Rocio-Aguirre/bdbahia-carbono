@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://drvg0pcwry2wa"]
+
+[ext_resource type="Script" uid="uid://blrws57t1neor" path="res://DoorArea.gd" id="1_fsfkr"]
+[ext_resource type="Texture2D" uid="uid://d3r3jtdf6awfm" path="res://Assets/UI/fastForward.png" id="2_1eqvd"]
+
+[node name="DoorArea" type="Area2D" unique_id=2137747710]
+script = ExtResource("1_fsfkr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=697779785]
+polygon = PackedVector2Array(0, -16, 32, 0, 0, 16, -32, 0)
+
+[node name="ArrowSprite" type="Sprite2D" parent="." unique_id=1944631929]
+z_index = 100
+position = Vector2(-9.536743e-07, -31.000004)
+rotation = -0.46425757
+scale = Vector2(0.39063862, 0.37481117)
+texture = ExtResource("2_1eqvd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dvkqj3exj3gca"]
+
+[ext_resource type="Script" uid="uid://dr0hxu1ch3w1t" path="res://Scenes/main_menu.gd" id="1_28flt"]
+
+[node name="MainMenu" type="Control" unique_id=490028897]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="Panel" type="Panel" parent="." unique_id=1305007581]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel" unique_id=2091594659]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 165.0
+offset_right = 659.0
+offset_bottom = 212.0
+text = "GGJ - Carbono"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="Panel" unique_id=1220213599]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 268.0
+offset_right = 612.0
+offset_bottom = 314.0
+text = "Jugar"
+
+[node name="CreditsButton" type="Button" parent="Panel" unique_id=941111869]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 328.0
+offset_right = 612.0
+offset_bottom = 369.0
+text = "Creditos"
+
+[node name="QuitButton" type="Button" parent="Panel" unique_id=1695280001]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 383.0
+offset_right = 612.0
+offset_bottom = 416.0
+text = "Salir"
+
+[connection signal="pressed" from="Panel/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Panel/QuitButton" to="." method="_on_quit_button_pressed"]

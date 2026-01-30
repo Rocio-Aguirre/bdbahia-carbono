@@ -37,8 +37,6 @@ func change_state(new_state: State):
 
 func _ready() -> void:
 	$Sprite.texture = texture
-	$Outline.texture = texture
-	$Outline.scale*=1.001
 	change_state(State.IDLE)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
@@ -76,14 +74,12 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_player_detection_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		player_near = true
-		$Outline.visible = true
 		$Exclamation.visible = true
 
 
 func _on_player_detection_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		player_near = false
-		$Outline.visible = false
 		$Exclamation.visible = false
 
 

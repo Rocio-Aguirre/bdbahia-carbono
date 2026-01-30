@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://dgx33utipkwdt" path="res://Assets/UI/exclamation.png" id="2_6qnqm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6qnqm"]
-radius = 30.0
-height = 122.0
+radius = 17.0
+height = 84.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wajoj"]
-radius = 156.02884
+radius = 127.141655
 
 [node name="NPC_Entity" type="CharacterBody2D" unique_id=1304542090]
 script = ExtResource("1_wajoj")
@@ -34,8 +34,10 @@ texture = ExtResource("2_6qnqm")
 shape = SubResource("CapsuleShape2D_6qnqm")
 
 [node name="PlayerDetectionArea" type="Area2D" parent="." unique_id=568812205]
+scale = Vector2(1, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea" unique_id=455055143]
+position = Vector2(0, 144)
 shape = SubResource("CircleShape2D_wajoj")
 
 [node name="IdleStateTimer" type="Timer" parent="." unique_id=734694831]

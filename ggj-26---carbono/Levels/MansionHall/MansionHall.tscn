@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ci2xcwyh7132t"]
+
+[ext_resource type="PackedScene" uid="uid://bbsmoxpmklqy1" path="res://Scenes/ui.tscn" id="1_1ca4w"]
+[ext_resource type="PackedScene" uid="uid://dsehlvm0m78f3" path="res://Scenes/player.tscn" id="2_1odei"]
+
+[node name="MansionHall" type="Node2D" unique_id=743885460]
+
+[node name="UI" parent="." unique_id=401532264 instance=ExtResource("1_1ca4w")]
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=1908437130]
+offset_left = -2301.0
+offset_top = -1472.0
+offset_right = 3294.0
+offset_bottom = 2260.0
+color = Color(0.02950659, 0.029506551, 0.029506536, 1)
+
+[node name="Map" type="Node2D" parent="." unique_id=710294103]
+scale = Vector2(1, 0.5)
+
+[node name="Floor" type="ColorRect" parent="Map" unique_id=1244616011]
+offset_left = 294.99994
+offset_top = 146.0
+offset_right = 1744.0896
+offset_bottom = 1591.8228
+rotation = 0.7853982
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[node name="Player" parent="." unique_id=1591695807 instance=ExtResource("2_1odei")]
+position = Vector2(276, 564)

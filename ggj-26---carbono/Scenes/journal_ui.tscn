@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://cg2pqkfi4uprm"]
+
+[ext_resource type="Texture2D" uid="uid://c51l2emrpd0ke" path="res://Assets/NPCs/NPC1.png" id="1_j134b"]
+[ext_resource type="Texture2D" uid="uid://dqqmfwfbcc2tm" path="res://Assets/NPCs/NPC2.png" id="2_e5wfp"]
+[ext_resource type="Texture2D" uid="uid://4yk1yweo0044" path="res://Assets/NPCs/NPC3.png" id="3_qysb5"]
+[ext_resource type="Texture2D" uid="uid://cl0tal74uqche" path="res://Assets/NPCs/NPC4.png" id="4_fcyhq"]
+
+[node name="JournalUI" type="CanvasLayer" unique_id=234007581]
+
+[node name="BackgroundDim" type="ColorRect" parent="." unique_id=1453452491]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.44313726)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1007883247]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="JournalPanel" type="PanelContainer" parent="CenterContainer" unique_id=1143752697]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 2
+
+[node name="SplitContent" type="HBoxContainer" parent="CenterContainer/JournalPanel" unique_id=369239431]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="LeftNotes" type="VBoxContainer" parent="CenterContainer/JournalPanel/SplitContent" unique_id=1760445578]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CenterContainer/JournalPanel/SplitContent/LeftNotes" unique_id=48047744]
+layout_mode = 2
+text = "Notas del Caso"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/JournalPanel/SplitContent/LeftNotes" unique_id=868613393]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/JournalPanel/SplitContent/LeftNotes" unique_id=944400973]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NotesList" type="VBoxContainer" parent="CenterContainer/JournalPanel/SplitContent/LeftNotes/ScrollContainer" unique_id=1529655245]
+layout_mode = 2
+
+[node name="Culprit_Panel" type="VBoxContainer" parent="CenterContainer/JournalPanel/SplitContent" unique_id=1509313121]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel" unique_id=573859329]
+layout_mode = 2
+text = "¿Quien es el culpable?"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel" unique_id=2029007975]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel" unique_id=34104500]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer" unique_id=388131338]
+layout_mode = 2
+text = "1. ¿Cómo luce el culpable?"
+
+[node name="SuspectsGrid" type="GridContainer" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer" unique_id=1230852677]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="ButtonPlague" type="Button" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer/SuspectsGrid" unique_id=1120854505]
+layout_mode = 2
+theme_override_constants/icon_max_width = 128
+icon = ExtResource("1_j134b")
+
+[node name="ButtonWolf" type="Button" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer/SuspectsGrid" unique_id=94939503]
+layout_mode = 2
+theme_override_constants/icon_max_width = 128
+icon = ExtResource("2_e5wfp")
+
+[node name="ButtonFox" type="Button" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer/SuspectsGrid" unique_id=1059956179]
+layout_mode = 2
+theme_override_constants/icon_max_width = 128
+icon = ExtResource("3_qysb5")
+
+[node name="ButtonCat" type="Button" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer/SuspectsGrid" unique_id=1306264185]
+layout_mode = 2
+theme_override_constants/icon_max_width = 128
+icon = ExtResource("4_fcyhq")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel" unique_id=261975252]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer2" unique_id=1996460462]
+layout_mode = 2
+text = "2. ¿Cómo se llama el culpable?"
+
+[node name="OptionButton" type="OptionButton" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer2" unique_id=591282736]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Gero"
+popup/item_0/id = 0
+popup/item_1/text = "Ro"
+popup/item_1/id = 1
+popup/item_2/text = "Diego"
+popup/item_2/id = 2
+popup/item_3/text = "Emi"
+popup/item_3/id = 3
+
+[node name="SubmitButton" type="Button" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel" unique_id=428159949]
+layout_mode = 2
+disabled = true
+text = "Confirmar"
+
+[node name="Label2" type="Label" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel" unique_id=349762229]
+layout_mode = 2
+text = "Importante! 
+Una vez elegida tu respuesta no hay vuelta atras"
+horizontal_alignment = 1

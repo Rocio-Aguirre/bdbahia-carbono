@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deqq1j6wb62lq"
-path="res://.godot/imported/landscapeTiles_sheet.png-1d64d50a17bec94c3e7accc1d936fa6f.ctex"
+uid="uid://cm41l3nnebri0"
+path="res://.godot/imported/MasksButton.png-8dac36f23200df2da7fdeda269eadcc6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/landscapeTiles_sheet.png"
-dest_files=["res://.godot/imported/landscapeTiles_sheet.png-1d64d50a17bec94c3e7accc1d936fa6f.ctex"]
+source_file="res://Assets/UI/MasksButton.png"
+dest_files=["res://.godot/imported/MasksButton.png-8dac36f23200df2da7fdeda269eadcc6.ctex"]
 
 [params]
 

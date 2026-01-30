@@ -1,12 +1,11 @@
 extends CharacterBody2D
 class_name NPCEntity
 
+
+@export var can_move: bool
 @export var dialogue: DialogueResource
 @export var texture: Texture2D
-
 @onready var speed = 100.0
-
-
 var target_position: Vector2
 var direction: Vector2
 var player_near: bool = false
@@ -89,4 +88,5 @@ func _on_player_detection_area_body_exited(body: Node2D) -> void:
 
 
 func _on_idle_state_timer_timeout() -> void:
-	change_state(State.WALK)
+	if can_move:
+		change_state(State.WALK)

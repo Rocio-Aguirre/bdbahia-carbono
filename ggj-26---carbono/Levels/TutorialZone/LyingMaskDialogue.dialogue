@@ -1,0 +1,11 @@
+~ start
+Una mascara [shake] amenazadora [/shake] se encuentra en el piso, queres agarrarla?
+- Si.
+	Has obtenido la mascara de la mentira.
+	do GlobalData.pickup_lying_mask.emit()
+	set GlobalData.both_masks_aquired = true
+	=> END
+- No, me dan miedo las mascaras :C => END
+
+
+=> END

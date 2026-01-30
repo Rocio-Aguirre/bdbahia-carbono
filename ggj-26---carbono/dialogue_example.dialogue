@@ -1,0 +1,20 @@
+~ start
+Invitado Enmascarado: Hola! Que cosa terrible ocurrio...
+Invitado Enmascarado: De todas maneras, no me resultas conocido... [wave amp=25 freq=5]sos policia? 
+if GlobalData.is_lying_mask_equipped == false
+	- Prota: Si lo soy
+		Invitado Enmascarado: Mil disculpas no hablo con la ley.. => END
+else
+	- Prota: (mentir) Nop, me invitaron!
+		Invitado Enmascarado: Ah excelente, que querias saber? => preguntas 
+
+~ preguntas
+- ¿Quien Eres?
+	TEXTO EN PROGRESO
+- ¿Donde estabas cuando ocurrio el asesinato?
+	TEXTO EN PROGRESO
+- Nada por ahora... => END
+
+
+
+=> END

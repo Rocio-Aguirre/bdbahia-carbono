@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ddym6d7riyebj"]
+
+[ext_resource type="Script" uid="uid://cje3577vf6wm3" path="res://Scripts/interactable_area.gd" id="1_8lrnr"]
+[ext_resource type="Texture2D" uid="uid://c6to428c31jfv" path="res://icon.svg" id="2_47ny1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_47ny1"]
+radius = 79.05694
+
+[node name="InteractableArea" type="Area2D" unique_id=406048012]
+script = ExtResource("1_8lrnr")
+
+[node name="PlayerDetectionArea" type="CollisionShape2D" parent="." unique_id=587018517]
+shape = SubResource("CircleShape2D_47ny1")
+
+[node name="Outline" type="Sprite2D" parent="." unique_id=1035013885]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+scale = Vector2(0.3, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2097408019]
+scale = Vector2(0.25, 0.259)
+texture = ExtResource("2_47ny1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyv2ol7i4mka5"
-path="res://.godot/imported/landscapeTiles_018.png-e6580ef7d64569a2c3f8dc987ca8afc4.ctex"
+uid="uid://decsdnl2wisad"
+path="res://.godot/imported/square_ref.png-2c1c960ac86b132b5bed7e331286aec4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/landscapeTiles_018.png"
-dest_files=["res://.godot/imported/landscapeTiles_018.png-e6580ef7d64569a2c3f8dc987ca8afc4.ctex"]
+source_file="res://Assets/square_ref.png"
+dest_files=["res://.godot/imported/square_ref.png-2c1c960ac86b132b5bed7e331286aec4.ctex"]
 
 [params]
 

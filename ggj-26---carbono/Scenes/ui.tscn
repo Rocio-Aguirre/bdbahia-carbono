@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bbsmoxpmklqy1"]
+
+[ext_resource type="Script" uid="uid://b4pocyeullsx1" path="res://Scenes/UI.gd" id="1_qdvrb"]
+[ext_resource type="Texture2D" uid="uid://cm41l3nnebri0" path="res://Assets/UI/MasksButton.png" id="2_nf4gj"]
+
+[node name="UI" type="CanvasLayer" unique_id=401532264]
+script = ExtResource("1_qdvrb")
+
+[node name="AnnouncementLabel" type="Label" parent="." unique_id=862133511]
+visible = false
+top_level = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -403.0
+offset_top = 16.0
+offset_right = 403.0
+offset_bottom = 73.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Hola"
+horizontal_alignment = 1
+
+[node name="ChangeMaskButton" type="TextureButton" parent="." unique_id=81922420]
+offset_left = 967.0
+offset_top = 492.0
+offset_right = 1082.0
+offset_bottom = 610.0
+texture_normal = ExtResource("2_nf4gj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="VirtualJoystick" type="Control" parent="." unique_id=1473430619]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 45.0
+offset_top = 503.0
+offset_right = 166.0
+offset_bottom = 619.0
+
+[connection signal="pressed" from="ChangeMaskButton" to="." method="_on_change_mask_button_pressed"]

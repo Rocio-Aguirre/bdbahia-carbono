@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ddhqqngcflbek"
+path="res://.godot/imported/LyingMaskDialogue.dialogue-23ff7076cbd6d1bbc3d56173ec398558.tres"
+
+[deps]
+
+source_file="res://Levels/TutorialZone/LyingMaskDialogue.dialogue"
+dest_files=["res://.godot/imported/LyingMaskDialogue.dialogue-23ff7076cbd6d1bbc3d56173ec398558.tres"]
+
+[params]
+
+defaults=true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx5yjy4fn86sd"
-path="res://.godot/imported/pj_cute.png-7a8f500e27361dcb032b1dbabdd4ccfd.ctex"
+uid="uid://bmdtgvco46sfj"
+path="res://.godot/imported/ChatGPT_Image_Jan_30__2026__02_59_02_PM-removebg-preview.png-9cd7dce3435a2b84c69770de8476973a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/pj_cute.png"
-dest_files=["res://.godot/imported/pj_cute.png-7a8f500e27361dcb032b1dbabdd4ccfd.ctex"]
+source_file="res://Assets/NPCs/ChatGPT_Image_Jan_30__2026__02_59_02_PM-removebg-preview.png"
+dest_files=["res://.godot/imported/ChatGPT_Image_Jan_30__2026__02_59_02_PM-removebg-preview.png-9cd7dce3435a2b84c69770de8476973a.ctex"]
 
 [params]
 

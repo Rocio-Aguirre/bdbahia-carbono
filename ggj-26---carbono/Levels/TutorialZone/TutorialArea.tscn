@@ -105,7 +105,7 @@ DestinationScene = ExtResource("9_0t77p")
 [node name="Characters" type="Node2D" parent="." unique_id=314058152]
 
 [node name="Guardia" parent="Characters" unique_id=1304542090 instance=ExtResource("3_0v3t4")]
-position = Vector2(1404, 735)
+position = Vector2(1354, 773)
 dialogue = ExtResource("4_0v3t4")
 texture = ExtResource("4_cwgqs")
 

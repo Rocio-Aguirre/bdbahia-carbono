@@ -22,3 +22,7 @@ shape = SubResource("CapsuleShape2D_cvnsp")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1741210726]
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=958348431]
+
+[node name="StepTimer" type="Timer" parent="." unique_id=506123521]
+wait_time = 0.35
+one_shot = true

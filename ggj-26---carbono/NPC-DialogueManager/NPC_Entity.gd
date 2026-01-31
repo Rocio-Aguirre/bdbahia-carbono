@@ -6,6 +6,8 @@ class_name NPCEntity
 @export var texture: Texture2D
 @export var leitmotif_stream: AudioStream
 @onready var anim_player = $AnimationPlayer
+@export var max_width: float
+@export var max_height: float
 
 var player_near: bool = false
 
@@ -35,6 +37,7 @@ func _ready() -> void:
 	$Sprite.texture = texture
 	play_anim("IDLE")
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+	set_max_size($Sprite,max_width,max_width)
 
 func _on_dialogue_ended(_dialogo):
 	play_anim("IDLE")
@@ -57,3 +60,25 @@ func _on_player_detection_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		player_near = false
 		$Exclamation.visible = false
+func set_max_size(sprite: Sprite2D, max_width: float, max_height: float):
+	var texture = sprite.texture
+	if texture == null:
+		return
+
+	# 1. Obtenemos el tamaño original de la imagen
+	var tex_width = texture.get_width()
+	var tex_height = texture.get_height()
+	
+	# 2. Si ya es más chico que el máximo, no hacemos nada (opcional)
+	if tex_width <= max_width and tex_height <= max_height:
+		return 
+
+	# 3. Calculamos cuánto hay que achicarlo para que entre
+	var scale_x = max_width / tex_width
+	var scale_y = max_height / tex_height
+	
+	# 4. Elegimos la escala MENOR para mantener la proporción (Aspect Ratio)
+	# Si usamos la menor, nos aseguramos que entre en el ancho Y en el alto
+	var final_scale = min(scale_x, scale_y)
+	
+	sprite.scale = Vector2(final_scale, final_scale)

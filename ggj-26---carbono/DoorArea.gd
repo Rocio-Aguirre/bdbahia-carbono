@@ -47,6 +47,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		set_process_unhandled_input(false)
 		# Acá llamás a tu TransitionManager
 		TransitionManager.change_scene("res://Levels/MansionHall/MansionHall.tscn")
+		const sound = preload("res://Audio/open door.wav")
+		AudioManager.play_sfx(sound)
 		# Opcional: Desactivar input para que no spamee
 		
 	

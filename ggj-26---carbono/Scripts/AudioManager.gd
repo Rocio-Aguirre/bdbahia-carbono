@@ -48,3 +48,23 @@ func _get_track_node(name :String) -> AudioStreamPlayer:
 		"END": return end_track
 		"MENU": return menu_track
 	return null
+
+func play_sfx(stream: AudioStream, volume_db: float = 0.0, pitch_variance: float = 0.0) -> void:
+	if stream == null:
+		return
+	var sfx_player = AudioStreamPlayer.new()
+	sfx_player.stream = stream
+	sfx_player.volume_db = volume_db
+	
+	if pitch_variance > 0:
+		# Ejemplo: si variance es 0.1, el pitch va de 0.9 a 1.1 aleatoriamente
+		sfx_player.pitch_scale = randf_range(1.0 - pitch_variance, 1.0 + pitch_variance)
+	
+	# 3. Lo agregamos al árbol (como hijo de este AudioManager)
+	add_child(sfx_player)
+	
+	# 4. Le damos play
+	sfx_player.play()
+	
+	# 5. IMPORTANTE: Conectamos la señal para que se borre solo al terminar
+	sfx_player.finished.connect(sfx_player.queue_free)

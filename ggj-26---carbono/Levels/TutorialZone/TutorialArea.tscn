@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bbsmoxpmklqy1" path="res://Scenes/ui.tscn" id="3_xjk1r"]
 [ext_resource type="Resource" uid="uid://cmp47bvv5cd7" path="res://Levels/TutorialZone/GuardDialogue.dialogue" id="4_0v3t4"]
 [ext_resource type="Texture2D" uid="uid://d3r3jtdf6awfm" path="res://Assets/UI/fastForward.png" id="4_w5ptq"]
-[ext_resource type="Texture2D" uid="uid://c6to428c31jfv" path="res://icon.svg" id="5_w5ptq"]
+[ext_resource type="Texture2D" uid="uid://f4w46uu0eo06" path="res://Assets/Objects/mascara-mala.png" id="6_0t77p"]
 [ext_resource type="Resource" uid="uid://ddhqqngcflbek" path="res://Levels/TutorialZone/LyingMaskDialogue.dialogue" id="6_xkp16"]
 [ext_resource type="PackedScene" uid="uid://drvg0pcwry2wa" path="res://Scenes/door_area.tscn" id="8_xoxvr"]
 [ext_resource type="PackedScene" uid="uid://ci2xcwyh7132t" path="res://Levels/MansionHall/MansionHall.tscn" id="9_0t77p"]
@@ -55,18 +55,19 @@ visible = false
 position = Vector2(-29, -1316)
 rotation = 0.7853982
 
+[node name="LyingMask" parent="Level/Corridor" unique_id=406048012 instance=ExtResource("3_2juyx")]
+position = Vector2(1769.1815, 677.4087)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 1)
+texture = ExtResource("6_0t77p")
+dialogue = ExtResource("6_xkp16")
+max_width = 75.0
+max_height = 75.0
+
 [node name="Arrow" type="Sprite2D" parent="Level/Corridor" unique_id=1457308570]
 position = Vector2(1218.3448, 583.3633)
 scale = Vector2(2.3, 2.36)
 texture = ExtResource("4_w5ptq")
-
-[node name="LyingMask" parent="Level/Corridor" unique_id=406048012 instance=ExtResource("3_2juyx")]
-modulate = Color(1, 0, 0.07058824, 1)
-position = Vector2(1769.1814, 677.4087)
-rotation = 0.7853982
-scale = Vector2(2.345, 2.345)
-texture = ExtResource("5_w5ptq")
-dialogue = ExtResource("6_xkp16")
 
 [node name="DoorArea" parent="Level" unique_id=2137747710 instance=ExtResource("8_xoxvr")]
 position = Vector2(612, -772)
@@ -89,6 +90,8 @@ position = Vector2(487, -362)
 scale = Vector2(0.5, 0.5)
 dialogue = ExtResource("4_0v3t4")
 texture = ExtResource("12_0t77p")
+max_width = 75.0
+max_height = 150.0
 
 [node name="SlideSound" type="AudioStreamPlayer2D" parent="Characters/Guardia" unique_id=706269594]
 stream = ExtResource("11_xoxvr")

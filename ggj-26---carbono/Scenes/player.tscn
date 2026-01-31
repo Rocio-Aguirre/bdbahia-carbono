@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dsehlvm0m78f3"]
 
 [ext_resource type="Script" uid="uid://b37kyvtsbv34u" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://c6to428c31jfv" path="res://icon.svg" id="2_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://cdmcw1axss783" path="res://Assets/Player/prota-sin-mascara.png" id="2_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://boq1ldnu57ajp" path="res://Assets/Player/prota.png" id="3_vgqql"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 radius = 16.0
@@ -10,8 +11,27 @@ height = 48.0
 [node name="Player" type="CharacterBody2D" unique_id=1591695807 groups=["Player"]]
 script = ExtResource("1_cvnsp")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=889437486]
-scale = Vector2(0.3, 0.6)
+[node name="Sprite" type="Node2D" parent="." unique_id=1918730979]
+
+[node name="SpriteLyingMask" type="Sprite2D" parent="Sprite" unique_id=83973181]
+visible = false
+position = Vector2(3.3125038, -20.687502)
+scale = Vector2(0.1494399, 0.13622335)
+texture = ExtResource("3_vgqql")
+region_enabled = true
+region_rect = Rect2(257.43542, 0, 491.0769, 891.99994)
+
+[node name="SpriteTruthMask" type="Sprite2D" parent="Sprite" unique_id=867340425]
+visible = false
+position = Vector2(5.0000014, -21.999992)
+scale = Vector2(0.14663951, 0.13363029)
+texture = ExtResource("3_vgqql")
+region_enabled = true
+region_rect = Rect2(782.8965, 0.89785767, 491.07678, 898.3589)
+
+[node name="SpriteUnmasked" type="Sprite2D" parent="Sprite" unique_id=889437486]
+position = Vector2(7.6293945e-06, -16)
+scale = Vector2(0.06250001, 0.067708366)
 texture = ExtResource("2_6t5aa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=313916361]

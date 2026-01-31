@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bava0ovy67s47"
+path="res://.godot/imported/ChefDialogue.dialogue-bc29151051e25f3f24c51ddd7bb89722.tres"
+
+[deps]
+
+source_file="res://NPCs/Chef/ChefDialogue.dialogue"
+dest_files=["res://.godot/imported/ChefDialogue.dialogue-bc29151051e25f3f24c51ddd7bb89722.tres"]
+
+[params]
+
+defaults=true

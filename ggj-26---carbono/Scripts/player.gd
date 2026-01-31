@@ -6,6 +6,7 @@ const SOUND_STEP = preload("res://Audio/2 pasos.wav")
 
 func _ready() -> void:
 	GlobalData.mask_changed.connect(update_player_graphic)
+	update_player_graphic(GlobalData.current_mask)
 
 
 func play_step_sound():
@@ -14,12 +15,17 @@ func play_step_sound():
 func update_player_graphic(_state):
 	match GlobalData.current_mask:
 		GlobalData.MaskState.MASKLESS:
-			$Sprite2D.modulate = Color.WHITE
+			$Sprite/SpriteLyingMask.visible = false
+			$Sprite/SpriteTruthMask.visible = false
+			$Sprite/SpriteUnmasked.visible = true
 		GlobalData.MaskState.TRUTH_MASK:
-			$Sprite2D.modulate = Color.GREEN
+			$Sprite/SpriteLyingMask.visible = false
+			$Sprite/SpriteTruthMask.visible = true
+			$Sprite/SpriteUnmasked.visible = false
 		GlobalData.MaskState.LYING_MASK:
-			$Sprite2D.modulate = Color.RED
-
+			$Sprite/SpriteLyingMask.visible = true
+			$Sprite/SpriteTruthMask.visible = false
+			$Sprite/SpriteUnmasked.visible = false
 
 func _physics_process(delta: float) -> void:
 	if not GlobalData.is_in_dialogue:

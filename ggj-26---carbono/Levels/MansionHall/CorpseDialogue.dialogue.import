@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://8j78ejs8qvci"
+path="res://.godot/imported/CorpseDialogue.dialogue-0dab935db6e92b81ccb4e63485ece518.tres"
+
+[deps]
+
+source_file="res://Levels/MansionHall/CorpseDialogue.dialogue"
+dest_files=["res://.godot/imported/CorpseDialogue.dialogue-0dab935db6e92b81ccb4e63485ece518.tres"]
+
+[params]
+
+defaults=true

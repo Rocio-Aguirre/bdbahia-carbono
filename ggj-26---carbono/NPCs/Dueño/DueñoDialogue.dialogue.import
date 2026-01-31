@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c5yo3baomg6b"
+path="res://.godot/imported/DueñoDialogue.dialogue-7117bb275095b46d55fb647c3d68b162.tres"
+
+[deps]
+
+source_file="res://NPCs/Dueño/DueñoDialogue.dialogue"
+dest_files=["res://.godot/imported/DueñoDialogue.dialogue-7117bb275095b46d55fb647c3d68b162.tres"]
+
+[params]
+
+defaults=true

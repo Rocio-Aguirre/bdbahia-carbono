@@ -1,0 +1,239 @@
+[gd_scene format=3 uid="uid://bgh0l36e5m0xd"]
+
+[ext_resource type="Script" uid="uid://csih4iv4a78n4" path="res://NPCs/NPC_Entity.gd" id="1_5d8vq"]
+[ext_resource type="Texture2D" uid="uid://bfs3hx3m08o0w" path="res://Assets/NPCs/pianista.png" id="2_cucwa"]
+[ext_resource type="Texture2D" uid="uid://dgx33utipkwdt" path="res://Assets/UI/exclamation.png" id="3_1cxci"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_klirh"]
+radius = 103.0
+height = 206.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cfort"]
+radius = 944.358
+
+[sub_resource type="Animation" id="Animation_qvdnl"]
+resource_name = "AFFIRMATIVE"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10035551, 0.20071103, 0.30106655, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.2617994, 0.0, -0.2617994, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dhxya"]
+resource_name = "ANGRY"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2, 3), Vector2(1, -3), Vector2(3, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1942056, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3t4h5"]
+resource_name = "IDLE"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.984, 1), Vector2(1, 0.956)]
+}
+
+[sub_resource type="Animation" id="Animation_28sbb"]
+resource_name = "NEGATIVE"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.09222054, 0.2, 0.29293582, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-5, 0), Vector2(5, 0), Vector2(-5, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8wpkm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hrdun"]
+resource_name = "SCARED"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 0), Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1), Vector2(1, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 1.05), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.7764706, 0, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uw4kh"]
+resource_name = "TALKING"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.149773, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 1.05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qcuer"]
+_data = {
+&"AFFIRMATIVE": SubResource("Animation_qvdnl"),
+&"ANGRY": SubResource("Animation_dhxya"),
+&"IDLE": SubResource("Animation_3t4h5"),
+&"NEGATIVE": SubResource("Animation_28sbb"),
+&"RESET": SubResource("Animation_8wpkm"),
+&"SCARED": SubResource("Animation_hrdun"),
+&"TALKING": SubResource("Animation_uw4kh")
+}
+
+[node name="PianistaScene" type="CharacterBody2D" unique_id=1873722800]
+script = ExtResource("1_5d8vq")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=165880750]
+texture = ExtResource("2_cucwa")
+flip_h = true
+
+[node name="Exclamation" type="Sprite2D" parent="." unique_id=648476831]
+visible = false
+position = Vector2(3, -828.00006)
+scale = Vector2(3.74, 3.34)
+texture = ExtResource("3_1cxci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1804643059]
+position = Vector2(0, 32)
+shape = SubResource("CapsuleShape2D_klirh")
+
+[node name="PlayerDetectionArea" type="Area2D" parent="." unique_id=1501336387]
+position = Vector2(0, 8)
+scale = Vector2(1, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea" unique_id=1950876048]
+position = Vector2(3, -14)
+shape = SubResource("CircleShape2D_cfort")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=688953735]
+libraries/ = SubResource("AnimationLibrary_qcuer")
+
+[connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]
+[connection signal="body_exited" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_exited"]

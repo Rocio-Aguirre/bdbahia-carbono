@@ -2,18 +2,16 @@
 
 [ext_resource type="Script" uid="uid://dscmgylp7mrhj" path="res://game.gd" id="1_l2nnh"]
 [ext_resource type="PackedScene" uid="uid://dsehlvm0m78f3" path="res://Scenes/player.tscn" id="2_7osrd"]
-[ext_resource type="PackedScene" uid="uid://tqiu5x8ot720" path="res://NPC-DialogueManager/NPC_Entity.tscn" id="3_0v3t4"]
 [ext_resource type="PackedScene" uid="uid://ddym6d7riyebj" path="res://Scenes/interactable_area.tscn" id="3_2juyx"]
 [ext_resource type="Texture2D" uid="uid://b3gmjnvpoo7bd" path="res://Assets/Mansion/entrada.png" id="3_3bsr2"]
 [ext_resource type="PackedScene" uid="uid://bbsmoxpmklqy1" path="res://Scenes/ui.tscn" id="3_xjk1r"]
-[ext_resource type="Resource" uid="uid://cmp47bvv5cd7" path="res://Levels/TutorialZone/GuardDialogue.dialogue" id="4_0v3t4"]
+[ext_resource type="Resource" uid="uid://cmp47bvv5cd7" path="res://NPCs/Guardia/GuardDialogue.dialogue" id="4_0v3t4"]
 [ext_resource type="Texture2D" uid="uid://d3r3jtdf6awfm" path="res://Assets/UI/fastForward.png" id="4_w5ptq"]
 [ext_resource type="Texture2D" uid="uid://f4w46uu0eo06" path="res://Assets/Objects/mascara-mala.png" id="6_0t77p"]
 [ext_resource type="Resource" uid="uid://ddhqqngcflbek" path="res://Levels/TutorialZone/LyingMaskDialogue.dialogue" id="6_xkp16"]
 [ext_resource type="PackedScene" uid="uid://drvg0pcwry2wa" path="res://Scenes/door_area.tscn" id="8_xoxvr"]
 [ext_resource type="PackedScene" uid="uid://ci2xcwyh7132t" path="res://Levels/MansionHall/MansionHall.tscn" id="9_0t77p"]
-[ext_resource type="AudioStream" uid="uid://fyoyiq57djrc" path="res://Audio/moving-stone.mp3" id="11_xoxvr"]
-[ext_resource type="Texture2D" uid="uid://b12t75oflarmo" path="res://Assets/NPCs/Guard.png" id="12_0t77p"]
+[ext_resource type="PackedScene" uid="uid://bl335aqp14bxl" path="res://NPCs/Guardia/GuardiaScene.tscn" id="11_w18ms"]
 
 [node name="TutorialZone" type="Node2D" unique_id=333116170]
 script = ExtResource("1_l2nnh")
@@ -84,17 +82,11 @@ polygon = PackedVector2Array(549, 96, 444, 153, 849, 350, 1145, 153, 826, -6, 78
 
 [node name="Characters" type="Node2D" parent="." unique_id=314058152]
 
-[node name="Guardia" parent="Characters" unique_id=1304542090 instance=ExtResource("3_0v3t4")]
-position = Vector2(487, -362)
-scale = Vector2(0.5, 0.5)
+[node name="GuardiaScene" parent="Characters" unique_id=1733245850 instance=ExtResource("11_w18ms")]
+position = Vector2(513, -396)
+scale = Vector2(0.32, 0.32)
 dialogue = ExtResource("4_0v3t4")
-texture = ExtResource("12_0t77p")
-max_width = 75.0
-max_height = 150.0
-
-[node name="SlideSound" type="AudioStreamPlayer2D" parent="Characters/Guardia" unique_id=706269594]
-stream = ExtResource("11_xoxvr")
-metadata/_edit_lock_ = true
 
 [node name="Player" parent="Characters" unique_id=1591695807 instance=ExtResource("2_7osrd")]
 position = Vector2(-369, 89)
+scale = Vector2(1.305, 1.305)

@@ -1,15 +1,16 @@
-[gd_scene format=3 uid="uid://tqiu5x8ot720"]
+[gd_scene format=3 uid="uid://bp3sjfb8h0v11"]
 
-[ext_resource type="Texture2D" uid="uid://cx5yjy4fn86sd" path="res://Assets/NPCs/pj_cute.png" id="1_otedj"]
-[ext_resource type="Script" uid="uid://csih4iv4a78n4" path="res://NPC-DialogueManager/NPC_Entity.gd" id="1_wajoj"]
-[ext_resource type="Texture2D" uid="uid://dgx33utipkwdt" path="res://Assets/UI/exclamation.png" id="2_6qnqm"]
+[ext_resource type="Script" uid="uid://csih4iv4a78n4" path="res://NPCs/NPC_Entity.gd" id="1_yeclm"]
+[ext_resource type="Resource" uid="uid://c5yo3baomg6b" path="res://NPCs/Dueño/DueñoDialogue.dialogue" id="2_gc0dm"]
+[ext_resource type="Texture2D" uid="uid://c51l2emrpd0ke" path="res://Assets/NPCs/NPC1.png" id="3_ue84n"]
+[ext_resource type="Texture2D" uid="uid://dgx33utipkwdt" path="res://Assets/UI/exclamation.png" id="4_bdqqc"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6qnqm"]
-radius = 26.0
-height = 84.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i4dyt"]
+radius = 103.0
+height = 206.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wajoj"]
-radius = 210.03809
+[sub_resource type="CircleShape2D" id="CircleShape2D_gobe3"]
+radius = 649.1132
 
 [sub_resource type="Animation" id="Animation_qvdnl"]
 resource_name = "AFFIRMATIVE"
@@ -196,7 +197,7 @@ tracks/0/keys = {
 "values": [Vector2(1, 1), Vector2(0.9, 1.05), Vector2(1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3nilj"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qdj5q"]
 _data = {
 &"AFFIRMATIVE": SubResource("Animation_qvdnl"),
 &"ANGRY": SubResource("Animation_dhxya"),
@@ -207,34 +208,33 @@ _data = {
 &"TALKING": SubResource("Animation_uw4kh")
 }
 
-[node name="NPC_Entity" type="CharacterBody2D" unique_id=1304542090]
-script = ExtResource("1_wajoj")
+[node name="DueñoScene" type="CharacterBody2D" unique_id=683233417]
+script = ExtResource("1_yeclm")
+dialogue = ExtResource("2_gc0dm")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=1359436904]
-texture = ExtResource("1_otedj")
+[node name="Sprite" type="Sprite2D" parent="." unique_id=759532179]
+texture = ExtResource("3_ue84n")
 
-[node name="Exclamation" type="Sprite2D" parent="." unique_id=737269602]
-position = Vector2(0, -160)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_6qnqm")
+[node name="Exclamation" type="Sprite2D" parent="." unique_id=897341659]
+visible = false
+position = Vector2(3, -532)
+scale = Vector2(3.74, 3.34)
+texture = ExtResource("4_bdqqc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108838398]
-position = Vector2(0, 72)
-shape = SubResource("CapsuleShape2D_6qnqm")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1963908191]
+position = Vector2(0, -8)
+shape = SubResource("CapsuleShape2D_i4dyt")
 
-[node name="PlayerDetectionArea" type="Area2D" parent="." unique_id=568812205]
+[node name="PlayerDetectionArea" type="Area2D" parent="." unique_id=1196692729]
 position = Vector2(0, 8)
 scale = Vector2(1, 0.5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea" unique_id=455055143]
-position = Vector2(0, 256)
-shape = SubResource("CircleShape2D_wajoj")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea" unique_id=772832084]
+position = Vector2(3, -14)
+shape = SubResource("CircleShape2D_gobe3")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1321274840]
-libraries/ = SubResource("AnimationLibrary_3nilj")
-autoplay = &"IDLE"
-
-[node name="LeitMotifPlayer" type="AudioStreamPlayer2D" parent="." unique_id=516951996]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1878194604]
+libraries/ = SubResource("AnimationLibrary_qdj5q")
 
 [connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]
 [connection signal="body_exited" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_exited"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddhyc03qfyr4"
-path="res://.godot/imported/player_unmasked.png-8962f08d9ecf04484da4b0ac5ef72758.ctex"
+uid="uid://cdmcw1axss783"
+path="res://.godot/imported/prota-sin-mascara.png-623487bbc23d35bd95423ab91eb81853.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/player_unmasked.png"
-dest_files=["res://.godot/imported/player_unmasked.png-8962f08d9ecf04484da4b0ac5ef72758.ctex"]
+source_file="res://Assets/Player/prota-sin-mascara.png"
+dest_files=["res://.godot/imported/prota-sin-mascara.png-623487bbc23d35bd95423ab91eb81853.ctex"]
 
 [params]
 

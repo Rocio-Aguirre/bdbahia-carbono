@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bp7mewmfo7n1x"
+path="res://.godot/imported/PianistaDialogue.dialogue-e2cc00b82e005968e9266ef647d62e9e.tres"
+
+[deps]
+
+source_file="res://NPCs/Pianista/PianistaDialogue.dialogue"
+dest_files=["res://.godot/imported/PianistaDialogue.dialogue-e2cc00b82e005968e9266ef647d62e9e.tres"]
+
+[params]
+
+defaults=true

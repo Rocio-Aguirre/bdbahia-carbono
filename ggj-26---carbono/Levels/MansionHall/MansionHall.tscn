@@ -5,6 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://dsehlvm0m78f3" path="res://Scenes/player.tscn" id="2_1odei"]
 [ext_resource type="Texture2D" uid="uid://d2k27osnw1k7p" path="res://Assets/Mansion/pared(2).png" id="3_vh1cj"]
 [ext_resource type="Texture2D" uid="uid://cciu7wpt1ncex" path="res://Assets/Mansion/piso.png" id="4_0h4pj"]
+[ext_resource type="PackedScene" uid="uid://1l3kxnpp1ls1" path="res://NPCs/Chef/ChefScene.tscn" id="5_0h4pj"]
+[ext_resource type="PackedScene" uid="uid://ddym6d7riyebj" path="res://Scenes/interactable_area.tscn" id="5_pv2ee"]
+[ext_resource type="Texture2D" uid="uid://bwrs80acon6l6" path="res://Assets/NPCs/Corpse.png" id="6_grm1v"]
+[ext_resource type="PackedScene" uid="uid://bp3sjfb8h0v11" path="res://NPCs/Dueño/DueñoScene.tscn" id="7_e0fli"]
+[ext_resource type="Resource" uid="uid://8j78ejs8qvci" path="res://Levels/MansionHall/CorpseDialogue.dialogue" id="7_grm1v"]
+[ext_resource type="PackedScene" uid="uid://bgh0l36e5m0xd" path="res://NPCs/Pianista/PianistaScne.tscn" id="7_vivmj"]
 
 [node name="MansionHall" type="Node2D" unique_id=743885460]
 script = ExtResource("1_k1o1h")
@@ -37,5 +43,35 @@ texture = ExtResource("4_0h4pj")
 build_mode = 1
 polygon = PackedVector2Array(342, -288, 1252, 414, 397, 1314, -560, 454)
 
+[node name="Objects" type="Node2D" parent="." unique_id=145026162]
+
+[node name="Corpse" parent="Objects" unique_id=406048012 instance=ExtResource("5_pv2ee")]
+position = Vector2(344, 232)
+texture = ExtResource("6_grm1v")
+dialogue = ExtResource("7_grm1v")
+max_width = 300.0
+max_height = 200.0
+
+[node name="Question" parent="Objects/Corpse" index="2" unique_id=1254012975]
+position = Vector2(0, -50)
+
+[node name="Characters" type="Node2D" parent="." unique_id=519794525]
+position = Vector2(201, 266)
+
+[node name="ChefScene" parent="Characters" unique_id=381389303 instance=ExtResource("5_0h4pj")]
+position = Vector2(-586, -130)
+scale = Vector2(0.22, 0.22)
+
+[node name="PianistaScene" parent="Characters" unique_id=1873722800 instance=ExtResource("7_vivmj")]
+position = Vector2(134, -378)
+scale = Vector2(0.33, 0.33)
+
+[node name="DueñoScene" parent="Characters" unique_id=683233417 instance=ExtResource("7_e0fli")]
+position = Vector2(898.99994, -121)
+scale = Vector2(0.57, 0.57)
+
 [node name="Player" parent="." unique_id=1591695807 instance=ExtResource("2_1odei")]
-position = Vector2(257, 300)
+position = Vector2(392, 417)
+scale = Vector2(2.02, 2.02)
+
+[editable path="Objects/Corpse"]

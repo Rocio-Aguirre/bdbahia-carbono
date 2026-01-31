@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cb65vjy3euopf"]
 
-[ext_resource type="PackedScene" uid="uid://tqiu5x8ot720" path="res://NPC-DialogueManager/NPC_Entity.tscn" id="1_6ie7i"]
-[ext_resource type="Texture2D" uid="uid://decsdnl2wisad" path="res://Assets/square_ref.png" id="2_v23k1"]
+[ext_resource type="PackedScene" uid="uid://tqiu5x8ot720" path="res://NPCs/NPC_Entity.tscn" id="1_6ie7i"]
+[ext_resource type="Texture2D" path="res://Assets/square_ref.png" id="2_v23k1"]
 
 [node name="Node2D" type="Node2D" unique_id=1354257856]
 

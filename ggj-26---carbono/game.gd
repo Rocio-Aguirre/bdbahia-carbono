@@ -14,17 +14,13 @@ func _ready() -> void:
 
 
 func end_tutorial():
-	$Characters/Guardia/SlideSound.play()
 	var tween = create_tween()
-	tween.tween_property($Characters/Guardia,"global_position",$Characters/Guardia.global_position+Vector2(100,100),1.75)
+	tween.tween_property($Characters/GuardiaScene,"global_position",$Characters/GuardiaScene.global_position+Vector2(100,100),1.75)
 	$Level/DoorArea.enable()
-
-
 
 
 func pickup_mask():
 	$Level/Corridor/LyingMask.queue_free()
-
 
 func show_corridor():
 	corridor.visible = true
@@ -33,8 +29,3 @@ func show_corridor():
 	tween.tween_property($Level/FogofWar,"modulate:a",0.0,1.0)
 	tween.tween_property($Level/Corridor/Arrow,"modulate:a",1.0,2.0)
 	
-
-
-func _on_background_music_finished() -> void:
-	await get_tree().create_timer(1.0)
-	$Level/BackgroundMusic.play()

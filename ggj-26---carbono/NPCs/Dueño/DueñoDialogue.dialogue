@@ -1,7 +1,6 @@
 ~ start
 do AudioManager.play_theme("LIAR",0.5)
 do play_anim("TALKING")
-
 Lord: ¿Que hace aqui? El guardia no deberia dejar pasar a los invitados.
 if GlobalData.current_mask == GlobalData.MaskState.TRUTH_MASK:
 	- Soy un investigador privado, no un invitado.
@@ -13,7 +12,7 @@ if GlobalData.current_mask == GlobalData.MaskState.TRUTH_MASK:
 			Lord: De cualquier forma, tenes mi apoyo para lo que necesites. Quiero saber que le paso a mi hija.
 			- ¿Que me puede decir de su hija?
 				do play_anim("ANGRY")
-				Lord: Mi hija era... [b]apreta los puños[\b] dificil. 
+				Lord: Mi hija era... [b]apreta los puños[/b] dificil. 
 				Lord: Rebelde.
 				Lord: Malportada.
 				Lord: Pero ya casi la habia enderezado, sabe? Unos meses mas de disciplina y habría sido perfecta.

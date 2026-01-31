@@ -9,6 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://cl0tal74uqche" path="res://Assets/NPCs/NPC4.png" id="4_fcyhq"]
 [ext_resource type="Texture2D" uid="uid://b12t75oflarmo" path="res://Assets/NPCs/Guard.png" id="6_qrgs8"]
 
+[sub_resource type="Theme" id="Theme_qrgs8"]
+default_font = ExtResource("3_1qdbr")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("3_1qdbr")
+
 [sub_resource type="ButtonGroup" id="ButtonGroup_j134b"]
 
 [node name="JournalUI" type="CanvasLayer" unique_id=234007581]
@@ -69,17 +75,20 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
 
 [node name="NotesList" type="VBoxContainer" parent="CenteringPont/JournalBackground/LeftPageArea/LeftNotes/ScrollContainer" unique_id=1529655245]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = SubResource("Theme_qrgs8")
 
 [node name="HSeparator2" type="HSeparator" parent="CenteringPont/JournalBackground/LeftPageArea/LeftNotes" unique_id=663325447]
 layout_mode = 2
 
 [node name="QuitButton" type="TextureButton" parent="CenteringPont/JournalBackground/LeftPageArea/LeftNotes" unique_id=387120114]
-custom_minimum_size = Vector2(0, 150)
+custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("4_cgkyd")
 ignore_texture_size = true
 stretch_mode = 0

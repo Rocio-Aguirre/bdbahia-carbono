@@ -54,7 +54,6 @@ func add_clue_note(text:String):
 	new_label.text = text
 	new_label.autowrap_mode = TextServer.AUTOWRAP_WORD
 	new_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	new_label.custom_minimum_size.x = 400
 	notes_list.add_child(new_label)
 	var separator = HSeparator.new()
 	notes_list.add_child(separator)

@@ -6,7 +6,7 @@ var story_database = {
 	"masks_acknowledged": "Se ve que existen mascaras que obligan a decir la verdad, y mascaras que obligan a mentir... Interesante.",
 	"chef_hates_daughter": "El chef dice que la hija del dueño era insoportable.",
 	"lord_honorable": "El chef dice que el dueño de la mansión es un hombre honorable, y que es su amigo.",
-	"lord_strict": "El chef dice que el dueño era estricto con su hija.",
+	"lord_strict": "Pareciera que el dueño era muy estricto con su hija.",
 	"lord_trusts_you": "El lord de la mansión confia en mi.",
 	"thermo_obtained": "El chef me dio un termometro para carne.",
 	"need_lord_trust": "El chef solo me dará el termometro si obtengo la confianza del dueño de la mansión.",

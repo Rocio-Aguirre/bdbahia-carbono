@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://ci2xcwyh7132t"]
 
 [ext_resource type="PackedScene" uid="uid://bbsmoxpmklqy1" path="res://Scenes/ui.tscn" id="1_1ca4w"]
+[ext_resource type="Script" uid="uid://xp1l7k2e28ld" path="res://Levels/MansionHall/mansion_hall.gd" id="1_k1o1h"]
 [ext_resource type="PackedScene" uid="uid://dsehlvm0m78f3" path="res://Scenes/player.tscn" id="2_1odei"]
+[ext_resource type="Texture2D" uid="uid://d2k27osnw1k7p" path="res://Assets/Mansion/pared(2).png" id="3_vh1cj"]
+[ext_resource type="Texture2D" uid="uid://cciu7wpt1ncex" path="res://Assets/Mansion/piso.png" id="4_0h4pj"]
 
 [node name="MansionHall" type="Node2D" unique_id=743885460]
+script = ExtResource("1_k1o1h")
 
 [node name="UI" parent="." unique_id=401532264 instance=ExtResource("1_1ca4w")]
 
@@ -17,13 +21,15 @@ color = Color(0.02950659, 0.029506551, 0.029506536, 1)
 [node name="Map" type="Node2D" parent="." unique_id=710294103]
 scale = Vector2(1, 0.5)
 
-[node name="Floor" type="ColorRect" parent="Map" unique_id=1244616011]
-offset_left = 294.99994
-offset_top = 146.0
-offset_right = 1744.0896
-offset_bottom = 1591.8228
-rotation = 0.7853982
-color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+[node name="Pared" type="Sprite2D" parent="Map" unique_id=1199915787]
+position = Vector2(349.4999, -5.9998093)
+scale = Vector2(1.8759766, 3.088542)
+texture = ExtResource("3_vh1cj")
+
+[node name="Piso" type="Sprite2D" parent="Map" unique_id=681587110]
+position = Vector2(349.37497, 607.50024)
+scale = Vector2(1.881244, 3.345614)
+texture = ExtResource("4_0h4pj")
 
 [node name="Player" parent="." unique_id=1591695807 instance=ExtResource("2_1odei")]
-position = Vector2(276, 564)
+position = Vector2(257, 300)

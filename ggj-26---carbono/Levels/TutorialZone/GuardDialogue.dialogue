@@ -1,4 +1,5 @@
 ~ start
+do play_anim("TALKING")
 if GlobalData.tutorial_finished == true:
 	Guardia: ... => END!
 Guardia: Bienvenido a la fiesta de mascaras

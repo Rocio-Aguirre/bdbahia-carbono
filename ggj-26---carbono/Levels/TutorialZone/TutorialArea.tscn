@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dsehlvm0m78f3" path="res://Scenes/player.tscn" id="2_7osrd"]
 [ext_resource type="PackedScene" uid="uid://tqiu5x8ot720" path="res://NPC-DialogueManager/NPC_Entity.tscn" id="3_0v3t4"]
 [ext_resource type="PackedScene" uid="uid://ddym6d7riyebj" path="res://Scenes/interactable_area.tscn" id="3_2juyx"]
+[ext_resource type="Texture2D" uid="uid://b3gmjnvpoo7bd" path="res://Assets/Mansion/entrada.png" id="3_3bsr2"]
 [ext_resource type="PackedScene" uid="uid://bbsmoxpmklqy1" path="res://Scenes/ui.tscn" id="3_xjk1r"]
 [ext_resource type="Resource" uid="uid://cmp47bvv5cd7" path="res://Levels/TutorialZone/GuardDialogue.dialogue" id="4_0v3t4"]
 [ext_resource type="Texture2D" uid="uid://d3r3jtdf6awfm" path="res://Assets/UI/fastForward.png" id="4_w5ptq"]
@@ -30,60 +31,41 @@ color = Color(0.02950659, 0.029506551, 0.029506536, 1)
 [node name="Level" type="Node2D" parent="." unique_id=1497239700]
 scale = Vector2(1, 0.5)
 
-[node name="Floor" type="ColorRect" parent="Level" unique_id=39217478]
-offset_left = 277.0
-offset_top = 2470.0
-offset_right = 864.7451
-offset_bottom = 3214.4624
-rotation = 0.7853982
-color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+[node name="Entrada" type="Sprite2D" parent="Level" unique_id=1286202795]
+position = Vector2(1129.0001, 1499.0001)
+scale = Vector2(1.4609376, 2.9121099)
+texture = ExtResource("3_3bsr2")
 
-[node name="Floor2" type="ColorRect" parent="Level" unique_id=895835751]
-offset_left = 1054.0001
-offset_top = 1936.0001
-offset_right = 1270.0001
-offset_bottom = 2866.0
-rotation = 0.7853982
-color = Color(0.4045111, 0.40451115, 0.4045111, 1)
-
-[node name="Floor3" type="ColorRect" parent="Level" unique_id=924265103]
-offset_left = 1244.0
-offset_top = 1332.0
-offset_right = 2021.0
-offset_bottom = 1913.0
-rotation = 0.7853982
-color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+[node name="FogofWar" type="ColorRect" parent="Level" unique_id=939553709]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1852.9999
+offset_top = 975.99994
+offset_right = 3100.1475
+offset_bottom = 2322.0354
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.763894
+color = Color(0, 0, 0, 1)
 
 [node name="Corridor" type="Node2D" parent="Level" unique_id=428925840]
 visible = false
-position = Vector2(147, -1124)
-
-[node name="Floor4" type="ColorRect" parent="Level/Corridor" unique_id=13246873]
-offset_left = 1501.0
-offset_top = 3148.0
-offset_right = 2043.0
-offset_bottom = 3373.0
-rotation = 0.7853982
-color = Color(0.4045111, 0.40451115, 0.4045111, 1)
-
-[node name="Floor5" type="ColorRect" parent="Level/Corridor" unique_id=551543530]
-offset_left = 1857.0
-offset_top = 3332.0
-offset_right = 2408.3638
-offset_bottom = 3812.0
-rotation = 0.7853982
-color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+position = Vector2(-29, -1316)
 
 [node name="Arrow" type="Sprite2D" parent="Level/Corridor" unique_id=1457308570]
-position = Vector2(1505, 3284)
+position = Vector2(1555.9999, 2738)
 rotation = 0.7853982
 scale = Vector2(2.3, 2.36)
 texture = ExtResource("4_w5ptq")
 
 [node name="LyingMask" parent="Level/Corridor" unique_id=406048012 instance=ExtResource("3_2juyx")]
 modulate = Color(1, 0, 0.07058824, 1)
-position = Vector2(1871, 3652)
+position = Vector2(1988, 3008)
 rotation = 0.7853982
+scale = Vector2(2.345, 2.345)
 texture = ExtResource("5_w5ptq")
 dialogue = ExtResource("6_xkp16")
 
@@ -93,19 +75,15 @@ stream = ExtResource("7_itvy5")
 autoplay = true
 attenuation = 3.6050022
 
-[node name="Polygon2D" type="Polygon2D" parent="Level" unique_id=1121340389]
-color = Color(0.4739924, 0.35014707, 0.29101446, 1)
-polygon = PackedVector2Array(1377, 1464, 1388, 1020, 1605, 1266, 1608, 1696)
-
 [node name="DoorArea" parent="Level" unique_id=2137747710 instance=ExtResource("8_xoxvr")]
-position = Vector2(1451, 1546)
+position = Vector2(1718.0001, 738)
 scale = Vector2(3.69, 7.38)
 DestinationScene = ExtResource("9_0t77p")
 
 [node name="Characters" type="Node2D" parent="." unique_id=314058152]
 
 [node name="Guardia" parent="Characters" unique_id=1304542090 instance=ExtResource("3_0v3t4")]
-position = Vector2(1392, 749)
+position = Vector2(1562, 409)
 scale = Vector2(0.5, 0.5)
 dialogue = ExtResource("4_0v3t4")
 texture = ExtResource("12_0t77p")
@@ -115,6 +93,6 @@ stream = ExtResource("11_xoxvr")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="Characters" unique_id=1591695807 instance=ExtResource("2_7osrd")]
-position = Vector2(202, 1435)
+position = Vector2(1150, 632)
 
 [connection signal="finished" from="Level/BackgroundMusic" to="." method="_on_background_music_finished"]

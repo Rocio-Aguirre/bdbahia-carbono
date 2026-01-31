@@ -33,6 +33,17 @@ func set_mask_state(state: MaskState):
 	current_mask = state
 	mask_changed.emit(current_mask)
 
+
+func _init():
+	set_mask_state(MaskState.MASKLESS)
+	tutorial_finished = false
+	both_masks_aquired = false
+
+
+
+
+
+
 # ---------------- TUTORIAL SIGNALS Y METHODS ------------------------
 signal corridor_enabled
 signal pickup_lying_mask

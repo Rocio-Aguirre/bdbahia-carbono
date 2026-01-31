@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://cg2pqkfi4uprm"]
 
+[ext_resource type="Script" uid="uid://bkwyrb6io5ssg" path="res://Scenes/journal_ui.gd" id="1_e5wfp"]
 [ext_resource type="Texture2D" uid="uid://c51l2emrpd0ke" path="res://Assets/NPCs/NPC1.png" id="1_j134b"]
 [ext_resource type="Texture2D" uid="uid://dqqmfwfbcc2tm" path="res://Assets/NPCs/NPC2.png" id="2_e5wfp"]
-[ext_resource type="Texture2D" uid="uid://4yk1yweo0044" path="res://Assets/NPCs/NPC3.png" id="3_qysb5"]
+[ext_resource type="Texture2D" uid="uid://cnq0yy8yk5dpj" path="res://Assets/NPCs/chef.png" id="4_e5wfp"]
 [ext_resource type="Texture2D" uid="uid://cl0tal74uqche" path="res://Assets/NPCs/NPC4.png" id="4_fcyhq"]
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_j134b"]
+
 [node name="JournalUI" type="CanvasLayer" unique_id=234007581]
+script = ExtResource("1_e5wfp")
 
 [node name="BackgroundDim" type="ColorRect" parent="." unique_id=1453452491]
 anchors_preset = 15
@@ -50,13 +54,20 @@ size_flags_vertical = 3
 [node name="NotesList" type="VBoxContainer" parent="CenterContainer/JournalPanel/SplitContent/LeftNotes/ScrollContainer" unique_id=1529655245]
 layout_mode = 2
 
+[node name="HSeparator2" type="HSeparator" parent="CenterContainer/JournalPanel/SplitContent/LeftNotes" unique_id=663325447]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="QuitButton" type="Button" parent="CenterContainer/JournalPanel/SplitContent/LeftNotes" unique_id=41217830]
+layout_mode = 2
+text = "Volver al juego"
+
 [node name="Culprit_Panel" type="VBoxContainer" parent="CenterContainer/JournalPanel/SplitContent" unique_id=1509313121]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel" unique_id=573859329]
 layout_mode = 2
-text = "¿Quien es el culpable?"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel" unique_id=2029007975]
@@ -79,21 +90,31 @@ columns = 2
 [node name="ButtonPlague" type="Button" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer/SuspectsGrid" unique_id=1120854505]
 layout_mode = 2
 theme_override_constants/icon_max_width = 128
+toggle_mode = true
+button_group = SubResource("ButtonGroup_j134b")
 icon = ExtResource("1_j134b")
+autowrap_mode = 2
+autowrap_trim_flags = 0
 
 [node name="ButtonWolf" type="Button" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer/SuspectsGrid" unique_id=94939503]
 layout_mode = 2
 theme_override_constants/icon_max_width = 128
+toggle_mode = true
+button_group = SubResource("ButtonGroup_j134b")
 icon = ExtResource("2_e5wfp")
 
 [node name="ButtonFox" type="Button" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer/SuspectsGrid" unique_id=1059956179]
 layout_mode = 2
 theme_override_constants/icon_max_width = 128
-icon = ExtResource("3_qysb5")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_j134b")
+icon = ExtResource("4_e5wfp")
 
 [node name="ButtonCat" type="Button" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer/SuspectsGrid" unique_id=1306264185]
 layout_mode = 2
 theme_override_constants/icon_max_width = 128
+toggle_mode = true
+button_group = SubResource("ButtonGroup_j134b")
 icon = ExtResource("4_fcyhq")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel" unique_id=261975252]
@@ -102,19 +123,21 @@ layout_mode = 2
 
 [node name="Label2" type="Label" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer2" unique_id=1996460462]
 layout_mode = 2
-text = "2. ¿Cómo se llama el culpable?"
+text = "2. ¿Quién es el culpable?"
 
 [node name="OptionButton" type="OptionButton" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer2" unique_id=591282736]
 layout_mode = 2
-item_count = 4
-popup/item_0/text = "Gero"
+item_count = 5
+popup/item_0/text = "El Dueño"
 popup/item_0/id = 0
-popup/item_1/text = "Ro"
+popup/item_1/text = "La Chef"
 popup/item_1/id = 1
-popup/item_2/text = "Diego"
+popup/item_2/text = "El Guardia"
 popup/item_2/id = 2
-popup/item_3/text = "Emi"
+popup/item_3/text = "La Hija"
 popup/item_3/id = 3
+popup/item_4/text = "La Pianista"
+popup/item_4/id = 4
 
 [node name="SubmitButton" type="Button" parent="CenterContainer/JournalPanel/SplitContent/Culprit_Panel" unique_id=428159949]
 layout_mode = 2
@@ -126,3 +149,7 @@ layout_mode = 2
 text = "Importante! 
 Una vez elegida tu respuesta no hay vuelta atras"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="CenterContainer/JournalPanel/SplitContent/LeftNotes/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="item_selected" from="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer2/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="CenterContainer/JournalPanel/SplitContent/Culprit_Panel/SubmitButton" to="." method="_on_submit_button_pressed"]

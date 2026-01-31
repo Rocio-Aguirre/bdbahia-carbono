@@ -100,7 +100,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.5, 0.508)]
+"values": [Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -211,7 +211,6 @@ _data = {
 script = ExtResource("1_wajoj")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1359436904]
-scale = Vector2(0.5, 0.508)
 texture = ExtResource("1_otedj")
 
 [node name="Exclamation" type="Sprite2D" parent="." unique_id=737269602]
@@ -231,13 +230,11 @@ scale = Vector2(1, 0.5)
 position = Vector2(0, 256)
 shape = SubResource("CircleShape2D_wajoj")
 
-[node name="IdleStateTimer" type="Timer" parent="." unique_id=734694831]
-wait_time = 5.0
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1321274840]
 libraries/ = SubResource("AnimationLibrary_3nilj")
 autoplay = &"IDLE"
 
+[node name="LeitMotifPlayer" type="AudioStreamPlayer2D" parent="." unique_id=516951996]
+
 [connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]
 [connection signal="body_exited" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_exited"]
-[connection signal="timeout" from="IdleStateTimer" to="." method="_on_idle_state_timer_timeout"]

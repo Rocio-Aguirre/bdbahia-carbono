@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b4pocyeullsx1" path="res://Scenes/UI.gd" id="1_qdvrb"]
 [ext_resource type="Texture2D" uid="uid://cm41l3nnebri0" path="res://Assets/UI/MasksButton.png" id="2_nf4gj"]
+[ext_resource type="Texture2D" uid="uid://cyfnsxpsuv3m" path="res://Assets/UI/BooksButton.png" id="3_nf4gj"]
+[ext_resource type="PackedScene" uid="uid://cg2pqkfi4uprm" path="res://Scenes/journal_ui.tscn" id="4_2246s"]
 
 [node name="UI" type="CanvasLayer" unique_id=401532264]
 script = ExtResource("1_qdvrb")
@@ -21,15 +23,6 @@ theme_override_font_sizes/font_size = 30
 text = "Hola"
 horizontal_alignment = 1
 
-[node name="ChangeMaskButton" type="TextureButton" parent="." unique_id=81922420]
-offset_left = 967.0
-offset_top = 492.0
-offset_right = 1082.0
-offset_bottom = 610.0
-texture_normal = ExtResource("2_nf4gj")
-ignore_texture_size = true
-stretch_mode = 0
-
 [node name="VirtualJoystick" type="Control" parent="." unique_id=1473430619]
 layout_mode = 3
 anchors_preset = 0
@@ -38,4 +31,28 @@ offset_top = 503.0
 offset_right = 166.0
 offset_bottom = 619.0
 
+[node name="ChangeMaskButton" type="TextureButton" parent="." unique_id=81922420]
+offset_left = 1011.0
+offset_top = 544.0
+offset_right = 1084.0
+offset_bottom = 620.0
+disabled = true
+texture_normal = ExtResource("2_nf4gj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="JournalButton" type="TextureButton" parent="." unique_id=116473204]
+offset_left = 55.0
+offset_top = 517.0
+offset_right = 152.0
+offset_bottom = 622.0
+disabled = true
+texture_normal = ExtResource("3_nf4gj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="JournalUI" parent="." unique_id=234007581 instance=ExtResource("4_2246s")]
+visible = false
+
 [connection signal="pressed" from="ChangeMaskButton" to="." method="_on_change_mask_button_pressed"]
+[connection signal="pressed" from="JournalButton" to="." method="_on_texture_button_pressed"]

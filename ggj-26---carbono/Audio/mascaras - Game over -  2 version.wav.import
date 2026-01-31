@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://v6kq53j34j5t"
+path="res://.godot/imported/mascaras - Game over -  2 version.wav-bbe8eedaa79eb0c32248dbe9a79d73b6.sample"
+
+[deps]
+
+source_file="res://Audio/mascaras - Game over -  2 version.wav"
+dest_files=["res://.godot/imported/mascaras - Game over -  2 version.wav-bbe8eedaa79eb0c32248dbe9a79d73b6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

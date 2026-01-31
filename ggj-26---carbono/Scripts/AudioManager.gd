@@ -10,7 +10,7 @@ extends Node
 var current_track: AudioStreamPlayer = null
 
 func _ready() -> void:
-	play_theme("MENU")
+	play_theme("MENU",0.1)
 
 func play_theme(track_name: String, transition_duration: float = 1.5):
 	var next_track = _get_track_node(track_name)

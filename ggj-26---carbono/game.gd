@@ -10,7 +10,7 @@ func _ready() -> void:
 	GlobalData.end_tutorial.connect(end_tutorial)
 	GlobalData._init()
 	StoryManager.reset_clues()
-	AudioManager.play_theme("GAMEPLAY")
+	AudioManager.play_theme("GAMEPLAY",0.2)
 	$UI.show_info("Objetivo: Entra a la fiesta.")
 
 

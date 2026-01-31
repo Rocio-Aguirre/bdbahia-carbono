@@ -8,6 +8,72 @@
 radius = 16.0
 height = 48.0
 
+[sub_resource type="Animation" id="Animation_6t5aa"]
+resource_name = "IDLE"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.52, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.085, 0.955), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fkybt"]
+resource_name = "MOVE"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3.345), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vgqql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkybt"]
+_data = {
+&"IDLE": SubResource("Animation_6t5aa"),
+&"MOVE": SubResource("Animation_fkybt"),
+&"RESET": SubResource("Animation_vgqql")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=1591695807 groups=["Player"]]
 script = ExtResource("1_cvnsp")
 
@@ -46,3 +112,7 @@ shape = SubResource("CapsuleShape2D_cvnsp")
 [node name="StepTimer" type="Timer" parent="." unique_id=506123521]
 wait_time = 0.35
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=735969052]
+libraries/ = SubResource("AnimationLibrary_fkybt")
+autoplay = &"IDLE"

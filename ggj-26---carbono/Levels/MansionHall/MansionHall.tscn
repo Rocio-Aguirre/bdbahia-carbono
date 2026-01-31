@@ -28,18 +28,20 @@ color = Color(0.02950659, 0.029506551, 0.029506536, 1)
 scale = Vector2(1, 0.5)
 
 [node name="Pared" type="Sprite2D" parent="Map" unique_id=1199915787]
-position = Vector2(349.4999, -5.9998093)
-scale = Vector2(1.8759766, 3.088542)
+position = Vector2(325.49988, -138.99962)
+scale = Vector2(1.8759766, 2.365886)
 texture = ExtResource("3_vh1cj")
 
 [node name="Piso" type="Sprite2D" parent="Map" unique_id=681587110]
-position = Vector2(349.37497, 607.50024)
-scale = Vector2(1.881244, 3.345614)
+position = Vector2(349.37497, 325.00012)
+scale = Vector2(1.881244, 2.3543856)
 texture = ExtResource("4_0h4pj")
 
-[node name="WallBody" type="StaticBody2D" parent="Map" unique_id=920895740]
+[node name="WallBody" type="StaticBody2D" parent="Map/Piso" unique_id=920895740]
+position = Vector2(-185.71486, -181.58109)
+scale = Vector2(0.53156316, 0.2988988)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/WallBody" unique_id=915953009]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Piso/WallBody" unique_id=915953009]
 build_mode = 1
 polygon = PackedVector2Array(342, -288, 1252, 414, 397, 1314, -560, 454)
 
@@ -47,10 +49,14 @@ polygon = PackedVector2Array(342, -288, 1252, 414, 397, 1314, -560, 454)
 
 [node name="Corpse" parent="Objects" unique_id=406048012 instance=ExtResource("5_pv2ee")]
 position = Vector2(344, 232)
+scale = Vector2(1.295, 1.295)
 texture = ExtResource("6_grm1v")
 dialogue = ExtResource("7_grm1v")
 max_width = 300.0
 max_height = 200.0
+
+[node name="Sprite" parent="Objects/Corpse" index="1" unique_id=2097408019]
+position = Vector2(1, 0)
 
 [node name="Question" parent="Objects/Corpse" index="2" unique_id=1254012975]
 position = Vector2(0, -50)
@@ -59,19 +65,19 @@ position = Vector2(0, -50)
 position = Vector2(201, 266)
 
 [node name="ChefScene" parent="Characters" unique_id=381389303 instance=ExtResource("5_0h4pj")]
-position = Vector2(-586, -130)
+position = Vector2(-318, -317)
 scale = Vector2(0.22, 0.22)
 
 [node name="PianistaScene" parent="Characters" unique_id=1873722800 instance=ExtResource("7_vivmj")]
-position = Vector2(134, -378)
+position = Vector2(174, -423.00003)
 scale = Vector2(0.33, 0.33)
 
 [node name="DueñoScene" parent="Characters" unique_id=683233417 instance=ExtResource("7_e0fli")]
-position = Vector2(898.99994, -121)
+position = Vector2(809.99994, -213)
 scale = Vector2(0.57, 0.57)
 
 [node name="Player" parent="." unique_id=1591695807 instance=ExtResource("2_1odei")]
-position = Vector2(392, 417)
+position = Vector2(87, 196)
 scale = Vector2(2.02, 2.02)
 
 [editable path="Objects/Corpse"]

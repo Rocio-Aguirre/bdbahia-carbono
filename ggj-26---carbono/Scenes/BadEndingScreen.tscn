@@ -36,3 +36,4 @@ offset_bottom = 434.0
 text = "Salir al menu"
 
 [connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

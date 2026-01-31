@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bqr7t258i2c1k"]
+
+[ext_resource type="Script" uid="uid://e7iabvv2s13n" path="res://Scenes/credits_menu.gd" id="1_211g1"]
+
+[node name="CreditsMenu" type="Control" unique_id=564204739]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_211g1")
+
+[node name="Panel" type="Panel" parent="." unique_id=569063765]
+layout_mode = 0
+offset_right = 1162.0
+offset_bottom = 651.0
+
+[node name="MenuButton" type="Button" parent="Panel" unique_id=842321272]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 403.0
+offset_right = 652.0
+offset_bottom = 434.0
+text = "Volver al Menu
+"
+
+[connection signal="pressed" from="Panel/MenuButton" to="." method="_on_menu_button_pressed"]

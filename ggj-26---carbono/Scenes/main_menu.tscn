@@ -53,4 +53,5 @@ offset_bottom = 416.0
 text = "Salir"
 
 [connection signal="pressed" from="Panel/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Panel/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Panel/QuitButton" to="." method="_on_quit_button_pressed"]

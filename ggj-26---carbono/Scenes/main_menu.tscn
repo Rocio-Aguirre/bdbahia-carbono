@@ -2,20 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dr0hxu1ch3w1t" path="res://Scenes/main_menu.gd" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://cn00w2yc5flpa" path="res://Assets/UI/main_menu.png" id="2_48xlc"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
-bg_color = Color(0.6, 0.6, 0.6, 0.039215688)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ehe0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48xlc"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n45e2"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opfnp"]
+[ext_resource type="Texture2D" uid="uid://cgi4pcwcvn3ih" path="res://Assets/UI/boton-1.png" id="3_ce3w2"]
+[ext_resource type="FontFile" uid="uid://cgnf6vdcil3b2" path="res://Assets/UI/DK Crayon Crumble.ttf" id="4_n45e2"]
+[ext_resource type="Texture2D" uid="uid://ccw40orivvhl0" path="res://Assets/UI/boton-2.png" id="5_n45e2"]
 
 [node name="MainMenu" type="Control" unique_id=490028897]
 layout_mode = 3
@@ -34,7 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1502545555]
+[node name="Background" type="TextureRect" parent="Panel" unique_id=1502545555]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,16 +32,28 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_48xlc")
 expand_mode = 2
+metadata/_edit_lock_ = true
 
-[node name="PlayButton" type="Button" parent="Panel" unique_id=1220213599]
+[node name="PlayButton" type="TextureButton" parent="Panel" unique_id=265402244]
 layout_mode = 0
-offset_left = 174.0
-offset_top = 141.0
-offset_right = 461.0
-offset_bottom = 219.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_48xlc")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_1ehe0")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_48xlc")
+offset_left = 100.0
+offset_top = 77.0
+offset_right = 496.0
+offset_bottom = 300.0
+texture_normal = ExtResource("3_ce3w2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel/PlayButton" unique_id=1604616970]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 97.0
+offset_right = 326.0
+offset_bottom = 129.0
+theme_override_fonts/font = ExtResource("4_n45e2")
+theme_override_font_sizes/font_size = 27
+text = "ENTRAR A LA FIESTA"
+horizontal_alignment = 1
 
 [node name="CreditsButton" type="Button" parent="Panel" unique_id=941111869]
 visible = false
@@ -63,16 +64,26 @@ offset_right = 581.0
 offset_bottom = 533.0
 text = "Creditos"
 
-[node name="QuitButton" type="Button" parent="Panel" unique_id=1695280001]
+[node name="QuitButton" type="TextureButton" parent="Panel" unique_id=1705928967]
 layout_mode = 0
-offset_left = 617.0
-offset_top = 251.0
-offset_right = 915.3141
-offset_bottom = 327.03918
+offset_left = 556.0
+offset_top = 191.00002
+offset_right = 965.765
+offset_bottom = 439.35452
 rotation = -0.0573285
-theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_n45e2")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_opfnp")
+texture_normal = ExtResource("5_n45e2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel/QuitButton" unique_id=1351725474]
+layout_mode = 0
+offset_left = 111.24998
+offset_top = 103.544395
+offset_right = 320.24997
+offset_bottom = 128.5444
+theme_override_fonts/font = ExtResource("4_n45e2")
+theme_override_font_sizes/font_size = 24
+text = "ABANDONAR LA FIESTA"
 
 [connection signal="pressed" from="Panel/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Panel/CreditsButton" to="." method="_on_credits_button_pressed"]

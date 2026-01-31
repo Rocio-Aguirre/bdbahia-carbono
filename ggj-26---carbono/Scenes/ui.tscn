@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bbsmoxpmklqy1"]
 
 [ext_resource type="Script" uid="uid://b4pocyeullsx1" path="res://Scenes/UI.gd" id="1_qdvrb"]
-[ext_resource type="Texture2D" uid="uid://cm41l3nnebri0" path="res://Assets/UI/MasksButton.png" id="2_nf4gj"]
-[ext_resource type="Texture2D" uid="uid://cyfnsxpsuv3m" path="res://Assets/UI/BooksButton.png" id="3_nf4gj"]
+[ext_resource type="Texture2D" uid="uid://dlsksnc6gc6q1" path="res://Assets/UI/conejo.png" id="2_q7pk6"]
+[ext_resource type="Texture2D" uid="uid://cn00w2yc5flpa" path="res://Assets/UI/main_menu.png" id="3_m78vo"]
 [ext_resource type="PackedScene" uid="uid://cg2pqkfi4uprm" path="res://Scenes/journal_ui.tscn" id="4_2246s"]
 [ext_resource type="AudioStream" uid="uid://dsm4m4howqh3h" path="res://Audio/book page.wav" id="5_q7pk6"]
 
@@ -33,22 +33,23 @@ offset_right = 166.0
 offset_bottom = 619.0
 
 [node name="ChangeMaskButton" type="TextureButton" parent="." unique_id=81922420]
-offset_left = 1011.0
-offset_top = 544.0
-offset_right = 1084.0
-offset_bottom = 620.0
+offset_left = 1002.0
+offset_top = 478.0
+offset_right = 1270.0
+offset_bottom = 674.0
 disabled = true
-texture_normal = ExtResource("2_nf4gj")
+texture_normal = ExtResource("2_q7pk6")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="JournalButton" type="TextureButton" parent="." unique_id=116473204]
-offset_left = 55.0
-offset_top = 517.0
-offset_right = 152.0
-offset_bottom = 622.0
+offset_left = 34.0
+offset_top = 524.0
+offset_right = 172.0
+offset_bottom = 629.0
+rotation = -0.044079382
 disabled = true
-texture_normal = ExtResource("3_nf4gj")
+texture_normal = ExtResource("3_m78vo")
 ignore_texture_size = true
 stretch_mode = 0
 

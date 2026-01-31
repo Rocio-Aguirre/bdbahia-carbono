@@ -1,10 +1,10 @@
 extends CanvasLayer
 signal journal_closed
 
-@onready var suspects_grid: GridContainer = $CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer/SuspectsGrid
-@onready var option_button: OptionButton = $CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer2/OptionButton
-@onready var submit_button: Button = $CenterContainer/JournalPanel/SplitContent/Culprit_Panel/SubmitButton
-@onready var notes_list: VBoxContainer = $CenterContainer/JournalPanel/SplitContent/LeftNotes/ScrollContainer/NotesList
+@onready var suspects_grid: GridContainer = $CenteringPont/JournalBackground/RightPageArea/Culprit_Panel/VBoxContainer/SuspectsGrid
+@onready var option_button: OptionButton = $CenteringPont/JournalBackground/RightPageArea/Culprit_Panel/VBoxContainer2/OptionButton
+@onready var submit_button: Button = $CenteringPont/JournalBackground/RightPageArea/Culprit_Panel/SubmitButton
+@onready var notes_list: VBoxContainer = $CenteringPont/JournalBackground/LeftPageArea/LeftNotes/ScrollContainer/NotesList
 
 var suspect_data = ["Plague","Wolf","Fox","Cat"]
 

@@ -1,5 +1,5 @@
 extends CanvasLayer
-
+signal journal_closed
 
 @onready var suspects_grid: GridContainer = $CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer/SuspectsGrid
 @onready var option_button: OptionButton = $CenterContainer/JournalPanel/SplitContent/Culprit_Panel/VBoxContainer2/OptionButton
@@ -58,4 +58,5 @@ func _on_option_button_item_selected(index: int) -> void:
 
 
 func _on_quit_button_pressed() -> void:
+	journal_closed.emit()
 	visible = false

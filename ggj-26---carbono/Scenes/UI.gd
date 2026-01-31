@@ -54,4 +54,9 @@ func _on_change_mask_button_pressed() -> void:
 
 
 func _on_texture_button_pressed() -> void:
+	$AudioStreamPlayer.play(4.28)
 	$JournalUI.visible = true
+
+
+func _on_journal_ui_journal_closed() -> void:
+	$AudioStreamPlayer.play(6.18)

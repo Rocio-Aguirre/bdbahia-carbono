@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://doqufttahqno2"]
+
+[ext_resource type="Script" uid="uid://d33npgn80le7k" path="res://Scripts/AudioManager.gd" id="1_mjqhu"]
+[ext_resource type="AudioStream" uid="uid://4solalv7sqao" path="res://Audio/Mascaras- Vals piano - game.wav" id="2_5kf6k"]
+[ext_resource type="AudioStream" uid="uid://uhjg66t7ep70" path="res://Audio/Mascaras- Vals piano - verdad.wav" id="3_tnn7g"]
+[ext_resource type="AudioStream" uid="uid://bwaa1dmd8xivg" path="res://Audio/Mascaras- Vals piano - mentira.wav" id="4_lwpe1"]
+[ext_resource type="AudioStream" uid="uid://cvl4mp4mapxv6" path="res://Audio/Global game jam Mascaras- musica  titulo.wav" id="5_jmilc"]
+[ext_resource type="AudioStream" uid="uid://6xnnd4441sfx" path="res://Audio/mascaras - Game over.wav" id="6_5nrbi"]
+
+[node name="AudioManager" type="Node" unique_id=569494380]
+script = ExtResource("1_mjqhu")
+
+[node name="gameplay_track" type="AudioStreamPlayer" parent="." unique_id=267848732]
+stream = ExtResource("2_5kf6k")
+volume_db = -80.0
+autoplay = true
+
+[node name="honest_track" type="AudioStreamPlayer" parent="." unique_id=1617250801]
+stream = ExtResource("3_tnn7g")
+volume_db = -80.0
+autoplay = true
+
+[node name="lier_track" type="AudioStreamPlayer" parent="." unique_id=775131096]
+stream = ExtResource("4_lwpe1")
+volume_db = -80.0
+autoplay = true
+
+[node name="menu_track" type="AudioStreamPlayer" parent="." unique_id=1633674562]
+stream = ExtResource("5_jmilc")
+volume_db = -80.0
+autoplay = true
+
+[node name="end_track" type="AudioStreamPlayer" parent="." unique_id=47823167]
+stream = ExtResource("6_5nrbi")
+volume_db = -80.0
+autoplay = true

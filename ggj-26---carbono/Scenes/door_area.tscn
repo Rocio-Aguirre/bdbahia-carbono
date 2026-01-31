@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://blrws57t1neor" path="res://DoorArea.gd" id="1_fsfkr"]
 [ext_resource type="Texture2D" uid="uid://d3r3jtdf6awfm" path="res://Assets/UI/fastForward.png" id="2_1eqvd"]
+[ext_resource type="AudioStream" uid="uid://d0pifkndlqgn0" path="res://Audio/open door.wav" id="3_qw8ys"]
 
 [node name="DoorArea" type="Area2D" unique_id=2137747710]
 script = ExtResource("1_fsfkr")
@@ -15,6 +16,9 @@ position = Vector2(-9.536743e-07, -31.000004)
 rotation = -0.46425757
 scale = Vector2(0.39063862, 0.37481117)
 texture = ExtResource("2_1eqvd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1735466488]
+stream = ExtResource("3_qw8ys")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

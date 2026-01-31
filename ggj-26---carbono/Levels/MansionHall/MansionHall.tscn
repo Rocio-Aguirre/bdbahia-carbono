@@ -31,5 +31,11 @@ position = Vector2(349.37497, 607.50024)
 scale = Vector2(1.881244, 3.345614)
 texture = ExtResource("4_0h4pj")
 
+[node name="WallBody" type="StaticBody2D" parent="Map" unique_id=920895740]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/WallBody" unique_id=915953009]
+build_mode = 1
+polygon = PackedVector2Array(342, -288, 1252, 414, 397, 1314, -560, 454)
+
 [node name="Player" parent="." unique_id=1591695807 instance=ExtResource("2_1odei")]
 position = Vector2(257, 300)

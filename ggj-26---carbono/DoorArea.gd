@@ -44,10 +44,12 @@ func _on_body_exited(body: Node2D) -> void:
 # Detectar la tecla de acción (Enter / E / Espacio)
 func _unhandled_input(event: InputEvent) -> void:
 	if player_in_area and event.is_action_pressed("ui_accept"):
+		set_process_unhandled_input(false)
 		# Acá llamás a tu TransitionManager
 		TransitionManager.change_scene("res://Levels/MansionHall/MansionHall.tscn")
 		# Opcional: Desactivar input para que no spamee
-		set_process_unhandled_input(false)
+		
+	
 
 # Animación de "flote" (Loop infinito)
 func start_floating_animation() -> void:

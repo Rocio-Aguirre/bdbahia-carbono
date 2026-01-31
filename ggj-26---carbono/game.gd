@@ -9,8 +9,8 @@ func _ready() -> void:
 	GlobalData.pickup_lying_mask.connect(pickup_mask)
 	GlobalData.end_tutorial.connect(end_tutorial)
 	GlobalData._init()
+	AudioManager.play_theme("GAMEPLAY")
 	$UI.show_info("Objetivo: Entra a la fiesta.")
-	$Level/BackgroundMusic.play()
 
 
 func end_tutorial():

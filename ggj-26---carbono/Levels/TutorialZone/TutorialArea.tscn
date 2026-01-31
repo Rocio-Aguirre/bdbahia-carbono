@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://d3r3jtdf6awfm" path="res://Assets/UI/fastForward.png" id="4_w5ptq"]
 [ext_resource type="Texture2D" uid="uid://c6to428c31jfv" path="res://icon.svg" id="5_w5ptq"]
 [ext_resource type="Resource" uid="uid://ddhqqngcflbek" path="res://Levels/TutorialZone/LyingMaskDialogue.dialogue" id="6_xkp16"]
-[ext_resource type="AudioStream" uid="uid://4solalv7sqao" path="res://Audio/Mascaras- Vals piano - game.wav" id="7_itvy5"]
 [ext_resource type="PackedScene" uid="uid://drvg0pcwry2wa" path="res://Scenes/door_area.tscn" id="8_xoxvr"]
 [ext_resource type="PackedScene" uid="uid://ci2xcwyh7132t" path="res://Levels/MansionHall/MansionHall.tscn" id="9_0t77p"]
 [ext_resource type="AudioStream" uid="uid://fyoyiq57djrc" path="res://Audio/moving-stone.mp3" id="11_xoxvr"]
@@ -22,17 +21,17 @@ script = ExtResource("1_l2nnh")
 [node name="UI" parent="." unique_id=401532264 instance=ExtResource("3_xjk1r")]
 
 [node name="Backdrop" type="ColorRect" parent="." unique_id=162746286]
-offset_left = -1257.0
-offset_top = -773.0
-offset_right = 2900.0
-offset_bottom = 2170.0
+offset_left = -2022.0
+offset_top = -1367.0
+offset_right = 2135.0
+offset_bottom = 1576.0
 color = Color(0.02950659, 0.029506551, 0.029506536, 1)
 
 [node name="Level" type="Node2D" parent="." unique_id=1497239700]
 scale = Vector2(1, 0.5)
+metadata/_edit_lock_ = true
 
 [node name="Entrada" type="Sprite2D" parent="Level" unique_id=1286202795]
-position = Vector2(1129.0001, 1499.0001)
 scale = Vector2(1.4609376, 2.9121099)
 texture = ExtResource("3_3bsr2")
 
@@ -42,10 +41,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1852.9999
-offset_top = 975.99994
-offset_right = 3100.1475
-offset_bottom = 2322.0354
+offset_left = 733.0001
+offset_top = -458.00006
+offset_right = 1980.1476
+offset_bottom = 888.03534
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.763894
@@ -54,36 +53,39 @@ color = Color(0, 0, 0, 1)
 [node name="Corridor" type="Node2D" parent="Level" unique_id=428925840]
 visible = false
 position = Vector2(-29, -1316)
+rotation = 0.7853982
 
 [node name="Arrow" type="Sprite2D" parent="Level/Corridor" unique_id=1457308570]
-position = Vector2(1555.9999, 2738)
-rotation = 0.7853982
+position = Vector2(1218.3448, 583.3633)
 scale = Vector2(2.3, 2.36)
 texture = ExtResource("4_w5ptq")
 
 [node name="LyingMask" parent="Level/Corridor" unique_id=406048012 instance=ExtResource("3_2juyx")]
 modulate = Color(1, 0, 0.07058824, 1)
-position = Vector2(1988, 3008)
+position = Vector2(1769.1814, 677.4087)
 rotation = 0.7853982
 scale = Vector2(2.345, 2.345)
 texture = ExtResource("5_w5ptq")
 dialogue = ExtResource("6_xkp16")
 
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="Level" unique_id=1162275983]
-position = Vector2(1872, 818)
-stream = ExtResource("7_itvy5")
-autoplay = true
-attenuation = 3.6050022
-
 [node name="DoorArea" parent="Level" unique_id=2137747710 instance=ExtResource("8_xoxvr")]
-position = Vector2(1718.0001, 738)
+position = Vector2(612, -772)
 scale = Vector2(3.69, 7.38)
 DestinationScene = ExtResource("9_0t77p")
+is_enabled = true
+
+[node name="Walls" type="Node2D" parent="." unique_id=1530379523]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls" unique_id=1381974538]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D" unique_id=295484182]
+build_mode = 1
+polygon = PackedVector2Array(549, 96, 444, 153, 849, 350, 1145, 153, 826, -6, 786, -343, 638, -597, 438, -460, -509, 62, -327, 188, 78, -29, 190, 19, 295, -38)
 
 [node name="Characters" type="Node2D" parent="." unique_id=314058152]
 
 [node name="Guardia" parent="Characters" unique_id=1304542090 instance=ExtResource("3_0v3t4")]
-position = Vector2(1562, 409)
+position = Vector2(487, -362)
 scale = Vector2(0.5, 0.5)
 dialogue = ExtResource("4_0v3t4")
 texture = ExtResource("12_0t77p")
@@ -93,6 +95,4 @@ stream = ExtResource("11_xoxvr")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="Characters" unique_id=1591695807 instance=ExtResource("2_7osrd")]
-position = Vector2(1150, 632)
-
-[connection signal="finished" from="Level/BackgroundMusic" to="." method="_on_background_music_finished"]
+position = Vector2(-369, 89)

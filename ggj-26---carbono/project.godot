@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="GGJ26 - Carbono"
+run/main_scene="uid://dvkqj3exj3gca"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +20,7 @@ config/icon="res://icon.svg"
 GlobalData="*uid://8j0ddulw5oyk"
 DialogueManager="*uid://c3rodes2l3gxb"
 TransitionManager="*uid://cwwqahu6vjgae"
+AudioManager="*uid://doqufttahqno2"
 
 [editor_plugins]
 
@@ -38,7 +40,7 @@ change_mask={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue_example.dialogue", "res://Levels/TutorialZone/GuardDialogue.dialogue", "res://Levels/TutorialZone/LyingMaskDialogue.dialogue", "res://ejemplo.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Levels/TutorialZone/GuardDialogue.dialogue", "res://Levels/TutorialZone/LyingMaskDialogue.dialogue")
 
 [physics]
 

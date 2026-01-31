@@ -23,6 +23,11 @@ TransitionManager="*uid://cwwqahu6vjgae"
 AudioManager="*uid://doqufttahqno2"
 StoryManager="*uid://bv7mt7viedu63"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")

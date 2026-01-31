@@ -1,6 +1,21 @@
 [gd_scene format=3 uid="uid://dvkqj3exj3gca"]
 
 [ext_resource type="Script" uid="uid://dr0hxu1ch3w1t" path="res://Scenes/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://cn00w2yc5flpa" path="res://Assets/UI/main_menu.png" id="2_48xlc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
+bg_color = Color(0.6, 0.6, 0.6, 0.039215688)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ehe0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48xlc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n45e2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opfnp"]
 
 [node name="MainMenu" type="Control" unique_id=490028897]
 layout_mode = 3
@@ -11,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
 
-[node name="Panel" type="Panel" parent="." unique_id=1305007581]
+[node name="Panel" type="Panel" parent="." unique_id=943829750]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,38 +34,45 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Panel" unique_id=2091594659]
-layout_mode = 0
-offset_left = 463.0
-offset_top = 165.0
-offset_right = 659.0
-offset_bottom = 212.0
-text = "GGJ - Carbono"
-horizontal_alignment = 1
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1502545555]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_48xlc")
+expand_mode = 2
 
 [node name="PlayButton" type="Button" parent="Panel" unique_id=1220213599]
 layout_mode = 0
-offset_left = 505.0
-offset_top = 268.0
-offset_right = 612.0
-offset_bottom = 314.0
-text = "Jugar"
+offset_left = 174.0
+offset_top = 141.0
+offset_right = 461.0
+offset_bottom = 219.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_48xlc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1ehe0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_48xlc")
 
 [node name="CreditsButton" type="Button" parent="Panel" unique_id=941111869]
+visible = false
 layout_mode = 0
-offset_left = 505.0
-offset_top = 328.0
-offset_right = 612.0
-offset_bottom = 369.0
+offset_left = 474.0
+offset_top = 492.0
+offset_right = 581.0
+offset_bottom = 533.0
 text = "Creditos"
 
 [node name="QuitButton" type="Button" parent="Panel" unique_id=1695280001]
 layout_mode = 0
-offset_left = 505.0
-offset_top = 383.0
-offset_right = 612.0
-offset_bottom = 416.0
-text = "Salir"
+offset_left = 617.0
+offset_top = 251.0
+offset_right = 915.3141
+offset_bottom = 327.03918
+rotation = -0.0573285
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n45e2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_opfnp")
 
 [connection signal="pressed" from="Panel/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Panel/CreditsButton" to="." method="_on_credits_button_pressed"]

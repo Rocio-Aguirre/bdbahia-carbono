@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bp3sjfb8h0v11" path="res://NPCs/Dueño/DueñoScene.tscn" id="7_e0fli"]
 [ext_resource type="Resource" uid="uid://8j78ejs8qvci" path="res://Levels/MansionHall/CorpseDialogue.dialogue" id="7_grm1v"]
 [ext_resource type="PackedScene" uid="uid://bgh0l36e5m0xd" path="res://NPCs/Pianista/PianistaScne.tscn" id="7_vivmj"]
+[ext_resource type="Resource" uid="uid://cch5mo4qn1fcj" path="res://Levels/MansionHall/LightSwitch.dialogue" id="8_5c8w4"]
+[ext_resource type="Resource" uid="uid://bp7mewmfo7n1x" path="res://NPCs/Pianista/PianistaDialogue.dialogue" id="10_nkv1j"]
 
 [node name="MansionHall" type="Node2D" unique_id=743885460]
 script = ExtResource("1_k1o1h")
@@ -61,6 +63,13 @@ position = Vector2(1, 0)
 [node name="Question" parent="Objects/Corpse" index="2" unique_id=1254012975]
 position = Vector2(0, -50)
 
+[node name="LightSwitch" parent="Objects" unique_id=1914785375 instance=ExtResource("5_pv2ee")]
+position = Vector2(-440, 32)
+dialogue = ExtResource("8_5c8w4")
+
+[node name="Question" parent="Objects/LightSwitch" index="2" unique_id=1254012975]
+position = Vector2(34, -98)
+
 [node name="Characters" type="Node2D" parent="." unique_id=519794525]
 position = Vector2(201, 266)
 
@@ -71,6 +80,7 @@ scale = Vector2(0.22, 0.22)
 [node name="PianistaScene" parent="Characters" unique_id=1873722800 instance=ExtResource("7_vivmj")]
 position = Vector2(174, -423.00003)
 scale = Vector2(0.33, 0.33)
+dialogue = ExtResource("10_nkv1j")
 
 [node name="DueñoScene" parent="Characters" unique_id=683233417 instance=ExtResource("7_e0fli")]
 position = Vector2(809.99994, -213)
@@ -81,3 +91,4 @@ position = Vector2(87, 196)
 scale = Vector2(2.02, 2.02)
 
 [editable path="Objects/Corpse"]
+[editable path="Objects/LightSwitch"]

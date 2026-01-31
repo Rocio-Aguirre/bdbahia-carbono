@@ -2,6 +2,8 @@ extends Node
 signal mask_changed(mask: MaskState)
 signal dialogue_entered
 signal dialogue_exited
+signal init_game
+
 
 enum MaskState {
 	MASKLESS,
@@ -38,6 +40,7 @@ func _init():
 	set_mask_state(MaskState.MASKLESS)
 	tutorial_finished = false
 	both_masks_aquired = false
+	init_game.emit()
 
 
 

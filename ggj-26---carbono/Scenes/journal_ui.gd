@@ -20,6 +20,7 @@ func _ready() -> void:
 			b.toggled.connect(_on_icon_toggled.bind(b))
 	
 	setup_story_clues()
+	StoryManager.init_game.connect(setup_story_clues)
 
 func setup_story_clues():
 	for elem in notes_list.get_children():

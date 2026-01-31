@@ -7,6 +7,9 @@ signal mask_button_pressed
 @onready var announcement_label: Label = $AnnouncementLabel
 @onready var journal_button: TextureButton = $JournalButton
 
+func disable_journal():
+	journal_button.disabled = true
+	journal_button.modulate.a = 0.2
 
 func enable_journal():
 	journal_button.modulate.a = 1.0
@@ -24,8 +27,12 @@ func _ready() -> void:
 	mask_button_pressed.connect(GlobalData.toggle_mask)
 	GlobalData.pickup_lying_mask.connect(enable_mask_button)
 	GlobalData.end_tutorial.connect(enable_journal)
+	GlobalData.init_game.connect(reset_ui)
 	
 
+func reset_ui():
+	disable_journal()
+	disable_mask_button()
 
 func show_info(info: String):
 	announcement_label.text = info

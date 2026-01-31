@@ -1,11 +1,56 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+do AudioManager.play_theme("HONEST",0.5)
+do play_anim("TALKING")
+Chef: Buenas tardes
+- ¿Qué sabes de la muerte?
+	Chef: No mucho, estaba preparando la cena para los invitados cuando oí un gran estruendo.
+	Chef: Cuando llegué aquí me encontré con mi señor, él me dijo que su hija se había caído de la escalera, y efectivamente ahí estaba el cadáver junto a la escalera, pobre de mi señor
+	- ¿Pobre su hija, no?
+	Chef: Supongo... me cuesta sentir pena cuando hablamos de alguien tan insoportable
+	do play_anim("ANGRY")
+	do StoryManager.unlock_beat("chef_hates_daughter")
+	- ¿Disculpa?
+	Chef: Está disculpado.
+	=> exit_dialogue
+- ¿Qué sabes del dueño de la mansión?
+	Chef: Es el hombre mas honorable que conozco, es un orgullo para mi ser su amigo.
+	do StoryManager.unlock_beat("lord_honorable")
+	- ¿Cómo era la relación del señor con su hija?
+	Chef: Firme, pero no lo suficiente.. a los niños hay que acomodarlos desde temprano.
+	do StoryManager.unlock_beat("lord_strict")
+	- ¿Y como hace eso?
+	Chef: A los golpes, claramente.
+	if GlobalData.current_mask == GlobalData.MaskState.TRUTH_MASK:
+		- Usted me repugna.
+		=> exit_dialogue
+	if GlobalData.current_mask == GlobalData.MaskState.LYING_MASK:
+		- (Mentir) Usted es claramente un orgullo como padre.
+		=> exit_dialogue
+- ¿Qué es eso que llevas ahí?
+	Chef: Un termometro para la comida, no es ningún arma si eso pensaba.
+	- ¿Me lo presta?
+	if StoryManager.has_beat("lord_trusts_you"):
+		do play_anim("AFFIRMATIVE")
+		Chef: Hmm, el señor dijo que viene a cooperar, tomelo.
+		Has obtenido el Termometro de carne
+		do StoryManager.unlock_beat("thermo_obtained")
+		=> exit_dialogue
+	else:
+		do play_anim("NEGATIVE")
+		Chef: No puedo, es propiedad de la mansión. Necesita tener el permiso del dueño.
+		- Que molestia.
+		do StoryManager.unlock_beat("need_lord_trust")
+		=> exit_dialogue
+- ¿Qué sabes de la pianista?
+	Chef: No he hablado con ella aún, llego hoy y fue un día muy ocupado.
+	do StoryManager.unlock_beat("chef_not_know_pianist")
+	=> exit_dialogue
+
+
+
+
+
+
+~ exit_dialogue
+do AudioManager.play_theme("GAMEPLAY",0.5)
 => END

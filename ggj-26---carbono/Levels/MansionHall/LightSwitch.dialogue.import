@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cch5mo4qn1fcj"
+path="res://.godot/imported/LightSwitch.dialogue-df3b404c8ddb94a93ae58f02d07f1c85.tres"
+
+[deps]
+
+source_file="res://Levels/MansionHall/LightSwitch.dialogue"
+dest_files=["res://.godot/imported/LightSwitch.dialogue-df3b404c8ddb94a93ae58f02d07f1c85.tres"]
+
+[params]
+
+defaults=true

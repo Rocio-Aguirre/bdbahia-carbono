@@ -20,6 +20,27 @@ func _ready() -> void:
 	
 	add_child(color_rect)
 
+# Agregalo en TransitionManager.gd
+
+func blink(duration_in: float = 0.1, hold_time: float = 0.1, duration_out: float = 0.1):
+	# 1. Bloqueamos inputs (opcional, por si no queres que se mueva en la oscuridad)
+	color_rect.mouse_filter = Control.MOUSE_FILTER_STOP
+	
+	var tween = create_tween()
+	
+	# 2. Ir a Negro
+	# Si duration_in es 0, es instantáneo (como cortar la luz)
+	tween.tween_property(color_rect, "color:a", 1.0, duration_in)
+	
+	# 3. Mantenerse en Negro (Wait)
+	tween.tween_interval(hold_time)
+	
+	# 4. Volver a Transparente
+	tween.tween_property(color_rect, "color:a", 0.0, duration_out)
+	
+	# 5. Desbloquear inputs al terminar
+	tween.finished.connect(func(): color_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE)
+
 func change_scene(scene_path: String, duration: float = 0.5) -> void:
 	# 1. Evitar que el jugador interactúe durante la transición
 	get_tree().paused = true # Opcional: Pausar el juego para que no te maten mientras carga

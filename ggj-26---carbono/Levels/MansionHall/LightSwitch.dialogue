@@ -1,0 +1,7 @@
+~ start
+- Apagar la luz
+do TransitionManager.blink(0.1,2.0,0.1)
+Hmm, la pianista siguio tocando en la oscuridad... Interesante
+=> END
+- no
+=> END

@@ -26,6 +26,7 @@ elif GlobalData.current_mask == GlobalData.MaskState.LYING_MASK:
 		Guardia: Ah bueno, pasa nomas.
 		do GlobalData.end_tutorial.emit()
 		set GlobalData.tutorial_finished = true
+		do StoryManager.unlock_beat("masks_acknowledged")
 		=> exit_dialogue
 
 ~ exit_dialogue

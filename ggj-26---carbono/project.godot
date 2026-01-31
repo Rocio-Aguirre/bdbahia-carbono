@@ -21,6 +21,7 @@ GlobalData="*uid://8j0ddulw5oyk"
 DialogueManager="*uid://c3rodes2l3gxb"
 TransitionManager="*uid://cwwqahu6vjgae"
 AudioManager="*uid://doqufttahqno2"
+StoryManager="*uid://bv7mt7viedu63"
 
 [editor_plugins]
 

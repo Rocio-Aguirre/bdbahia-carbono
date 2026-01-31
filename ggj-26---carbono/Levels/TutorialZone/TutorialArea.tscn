@@ -73,7 +73,6 @@ texture = ExtResource("4_w5ptq")
 position = Vector2(612, -772)
 scale = Vector2(3.69, 7.38)
 DestinationScene = ExtResource("9_0t77p")
-is_enabled = true
 
 [node name="Walls" type="Node2D" parent="." unique_id=1530379523]
 

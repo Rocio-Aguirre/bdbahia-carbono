@@ -1,70 +1,75 @@
 ~ start
-do AudioManager.play_theme("LIAR",0.5)
+do AudioManager.play_theme("HONEST",0.5)
 do play_anim("TALKING")
-Lord: ¿Que hace aqui? El guardia no deberia dejar pasar a los invitados.
+Dueño: ¿Que hace aqui? El guardia no deberia dejar pasar a los invitados.
 if GlobalData.current_mask == GlobalData.MaskState.TRUTH_MASK:
 	- Soy un investigador privado, no un invitado.
-		Lord: ¿Y que hace aquí? ¿No ve que mi hija sufrio un accidente? Se cayo de la escalera
+		Dueño: ¿Y que hace aquí? ¿No ve que mi hija sufrio un accidente? Se cayo de la escalera
 		do StoryManager.unlock_beat("lord_claims_accident")
 		if StoryManager.has_beat("cadaver_checked"):
 			- Señor, definitivamente su hija fue asesinada.
-			Lord: Imposible, ¿Por qué alguien querria asesinar a mi hija?
-			Lord: De cualquier forma, tenes mi apoyo para lo que necesites. Quiero saber que le paso a mi hija.
+			Dueño: Imposible, es lo que me dijeron... [next=auto]
+			Dueño: No importa ¿Por qué alguien querria asesinar a mi hija?
+			Dueño: De cualquier forma, tenes mi apoyo para lo que necesites. Quiero saber que le paso a mi hija.
 			- ¿Que me puede decir de su hija?
 				do play_anim("ANGRY")
-				Lord: Mi hija era... [b]apreta los puños[/b] dificil. 
-				Lord: Rebelde.
-				Lord: Malportada.
-				Lord: Pero ya casi la habia enderezado, sabe? Unos meses mas de disciplina y habría sido perfecta.
+				Dueño: Mi hija era... dificil. 
+				Dueño: Rebelde.
+				Dueño: Malportada.
+				Dueño: Pero ya casi la habia enderezado, sabe? Unos meses mas de disciplina y habría sido perfecta.
 				do StoryManager.unlock_beat("lord_strict")
 				- ¿De que tipo de disciplina esta hablando?
 				do play_anim("SCARED")
-				Lord: El tipo necesario para evitar que sea una desgracia para la familia.
-				Lord: [b] mira incomodamente al piso
-				Lord: Pero eso ya no importa, ¿verdad?
+				Dueño: El tipo necesario para evitar que sea una desgracia para la familia.
+				Dueño: [b] mira incomodamente al piso
+				Dueño: Pero eso ya no importa, ¿verdad?
 				do StoryManager.unlock_beat("lord_may_be_aggresive")
 				=> exit_dialogue
 			- ¿Que sabe de la pianista?
-				Lord: En realidad, mi hija fue quien la contrató. No me consulto al respecto.
-				Lord: Un dia aparecio diciendo "ella tocara para nosotros".
-				Lord: Ella fue siempre muy celosa de quien puede tocar su piano.
+				Dueño: En realidad, mi hija fue quien la contrató. No me consulto al respecto.
+				Dueño: Hace un par de semanas mi hija vino y dijo "A partir de ahora ella tocara para nosotros".
+				Dueño: Lo cual es raro, ella fue siempre muy celosa de quien puede tocar su piano.
 				do StoryManager.unlock_beat("daughter_contracted_pianist")
-				- ¿Que ocurrio exactamente en el momento del accidente?
-					Lord: Escuche un grito, creo que fue de la pianista, y luego un fuerte estruendo
-					Lord: Para cuando llegue a la escena, la pianista me dijo que vio una rata y se asusto
-					Lord: Al parecer su grito asusto a mi hija, por eso se cayo
-					do StoryManager.unlock_beat("lord_arrived_late")
-					Lord: Parecera increible, pero cuando entre a la habitación crei que mi hija estaba de pie.
-					Lord: Pero no, era la pianista.
-					Lord: Cuando vi el vestido con sangre en el suelo, me di cuenta lo que habia ocurrido.
-					- ¿Como pudo confundirlas?
-					Lord: A mi edad ya no veo bien... Todos mis amigos se quejan de lo mismo.
-					Lord: La vista, las rodillas, la espalda... 
-					Lord: De lo que se queja uno... Lo que daria ahora por que mi hija hubiese podido llegar a una edad en la que se quejase de la vista.
-					do StoryManager.unlock_beat("lord_and_friends_cant_see")
-					=> exit_dialogue
+				do StoryManager.unlock_beat("daughter_overprotective_piano")
+				=> exit_dialogue
+			- ¿Que ocurrio exactamente en el momento del accidente?
+				Dueño: Se corto la luz, y luego se escucho un fuerte estruendo.
+				Dueño: Luego la pianista me dijo que el ruido fue mi hija cayendo.
+				do StoryManager.unlock_beat("lord_arrived_late")
+				Dueño: Parecera increible, pero cuando entre a la habitación crei que mi hija estaba de pie.
+				Dueño: Pero no, era la pianista.
+				Dueño: Cuando vi el vestido con sangre en el suelo, me di cuenta lo que habia ocurrido.
+				do StoryManager.unlock_beat("lord_mixed_up_daughter")
+				- ¿Como pudo confundirlas?
+				Dueño: A mi edad ya no veo bien... Todos mis amigos se quejan de lo mismo.
+				Dueño: La vista, las rodillas, la espalda... 
+				Dueño: De lo que se queja uno... Lo que daria ahora por que mi hija hubiese podido llegar a una edad en la que se quejase de la vista.
+				do StoryManager.unlock_beat("lord_claims_cant_see")
+				=> exit_dialogue
 			- Necesito que le digas al chef que soy una persona de confianza. [if StoryManager.has_beat("need_lord_trust")]
-				Lord: Por supuesto, pero como no hay animaciones lo voy a hacer por telepatia
-				Lord: *Ruidos telepaticos*...
-				Lord: Listo
+				Dueño: Por supuesto, pero como no hay animaciones lo voy a hacer por telepatia
+				Dueño: *Ruidos telepaticos*...
+				Dueño: Listo
 				do StoryManager.unlock_beat("lord_trusts_you")
 				=> exit_dialogue
 		else:
 			- ¿Y por que tiene una escalera ahi?
-				Lord: Habia 2x1 en Carrefour [i] (este juego no fue auspiciado por Carrefour)
+				Dueño: Habia 2x1 en Carrefour [i] (este juego no fue auspiciado por Carrefour)
 				- ¿Y la otra escalera?
-				Lord: La quitamos despues de la muerte de mi hija, claramente.
+				Dueño: La quitamos despues de la muerte de mi hija, claramente.
 			- Ah mil disculpas, no sabia.
 			=> exit_dialogue
 else:
 	- (Mentir) Soy el guardia 
-		Lord: Y entonces que haces aca? Vaya para la puerta.
+		Dueño: Y entonces que haces aca? Vaya para la puerta.
+		(Pareciera que el Lord no ve muy bien... no soy para nada parecido al guardia)
+		do StoryManager.unlock_beat("lord_mixed_up_guard")
 		=> exit_dialogue
 	- (Mentir) Soy el cadaver de su hija [wave] buuuu
-		Lord: Alejese, irrespetuoso
+		Dueño: Alejese, irrespetuoso
 		=> exit_dialogue
 	- (Mentir) Soy un personaje de un videojuego para la GGJ2026.
-		Lord: Ah con razon podes solo mirar para adelante... pobrecillo
+		Dueño: Ah con razon podes solo mirar para adelante... pobrecillo
 		=> exit_dialogue
 
 

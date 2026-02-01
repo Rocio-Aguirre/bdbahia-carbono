@@ -3,21 +3,29 @@ do AudioManager.play_theme("HONEST",0.5)
 do play_anim("TALKING")
 Chef: Buenas tardes
 - ¿Qué sabes de la muerte?
-	Chef: No mucho, estaba preparando la cena para los invitados cuando oí un gran estruendo.
-	Chef: Cuando llegué aquí me encontré con mi señor, él me dijo que su hija se había caído de la escalera, y efectivamente ahí estaba el cadáver junto a la escalera, pobre de mi señor
-	- ¿Pobre su hija, no?
-	Chef: Supongo... me cuesta sentir pena cuando hablamos de alguien tan insoportable
-	do play_anim("ANGRY")
+	Chef: Lo mismo que todos, nada, [wave] el fin de la vida.
+	- ...
+	Chef: O estas preguntando por la parca? la de capucha? el que aparece en Billy y Mandy
+	- De la hija del dueño, la cumpleañera.
+	Chef: Ah si, yo encontre el cadaver... estaba escuchando la musica del piano en la cocina.
+	Chef: Cuando de repente, se corto la luz y la musica.
+	Chef: Luego escuche un gran estruendo, y cuando llegue al salon encontre el cadaver junto a la escalera.
+	do StoryManager.unlock_beat("chef_outage_story")
+	do StoryManager.unlock_beat("chef_found_victim")
+	Chef: Pobre de mi señor...
+	- Pobre su hija querra decir.
+	Chef: Supongo... me cuesta sentir pena por alguien que me parecia insoportable.
+	- Eso me parece brutalmente honesto.
+	Chef: Que quiere que le diga? no puedo mentir.
 	do StoryManager.unlock_beat("chef_hates_daughter")
-	- ¿Disculpa?
-	Chef: Está disculpado.
 	=> exit_dialogue
+
 - ¿Qué sabes del dueño de la mansión?
 	Chef: Es el hombre mas honorable que conozco, es un orgullo para mi ser su amigo.
 	do StoryManager.unlock_beat("lord_honorable")
 	- ¿Cómo era la relación del señor con su hija?
 	Chef: Firme, pero no lo suficiente.. a los niños hay que acomodarlos desde temprano.
-	do StoryManager.unlock_beat("lord_strict")
+	do StoryManager.unlock_beat("chef_claims_lord_strict")
 	- ¿Y como hace eso?
 	Chef: A los golpes, claramente.
 	if GlobalData.current_mask == GlobalData.MaskState.TRUTH_MASK:
@@ -32,20 +40,41 @@ Chef: Buenas tardes
 	if StoryManager.has_beat("lord_trusts_you"):
 		do play_anim("AFFIRMATIVE")
 		Chef: Hmm, el señor dijo que viene a cooperar, tomelo.
-		Has obtenido el Termometro de carne
+		Has obtenido el Termometro de carne.
 		do StoryManager.unlock_beat("thermo_obtained")
 		=> exit_dialogue
 	else:
 		do play_anim("NEGATIVE")
 		Chef: No puedo, es propiedad de la mansión. Necesita tener el permiso del dueño.
-		- Que molestia.
-		do StoryManager.unlock_beat("need_lord_trust")
+		if GlobalData.current_mask == GlobalData.MaskState.LYING_MASK:
+			- (Mentir) Ya tengo su permiso.
+			Chef: Ah bueno, tome.
+			Has obtenido el Termometro de carne.
+			do StoryManager.unlock_beat("thermo_obtained")
+		else:
+			- Que molestia.
+			do StoryManager.unlock_beat("need_lord_trust")
 		=> exit_dialogue
 - ¿Qué sabes de la pianista?
-	Chef: No he hablado con ella aún, llego hoy y fue un día muy ocupado.
+	Chef: No mucho, hoy fue un dia muy ocupado.
+	Chef: Durante la semana no tocaba muy bien que digamos, extrañamente hoy mejoro muchisimo
 	do StoryManager.unlock_beat("chef_not_know_pianist")
+	do StoryManager.unlock_beat("chef_likes_today_music")
 	=> exit_dialogue
-
+- ¿Eso que tiene en las manos es sangre?
+	do play_anim("AFFIRMATIVE")
+	Chef: Asi es
+	- Se da cuenta que resulta interesante eso teniendo un cadaver a unos metros, no?
+	do play_anim("AFFIRMATIVE")
+	Chef: Es muy peculiar, si
+	- No le parece apropiado explicarme por que tiene sangre en las manos?
+	do play_anim("AFFIRMATIVE")
+	Chef: Si, seria muy oportuno hacerlo
+	- Bueno... ¿Por que tiene sangre en las manos?
+	Chef: Ah, me ensucie cocinando.
+	do StoryManager.unlock_beat("chef_claims_cooking")
+	=> exit_dialogue
+	
 
 
 

@@ -1,7 +1,10 @@
 ~ start
-- Apagar la luz
-do TransitionManager.blink(0.1,2.0,0.1)
-Hmm, la pianista siguio tocando en la oscuridad... Interesante
-=> END
-- no
+if StoryManager.has_beat("chef_outage_story"):
+	El chef menciono un apagon antes del asesinato... ¿Funcionaran bien las luces?
+	- Apagar la luz
+	do TransitionManager.blink(0.1,2.0,0.1)
+	Hmm, la musica siguio sonando... [wave] Que buen servicio!
+	do StoryManager.unlock_beat("pianist_can_play_dark")
+else:
+	Es un interruptor de luz.
 => END

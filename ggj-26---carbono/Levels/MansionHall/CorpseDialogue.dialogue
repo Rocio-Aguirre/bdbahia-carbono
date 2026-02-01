@@ -2,4 +2,21 @@
 Al acercarte al cadaver, observas que no hay traumatismos ni cortes en su cuerpo.
 Definitivamente fue envenenado.
 do StoryManager.unlock_beat("cadaver_checked")
+- Observar manos.
+	Las manos estan llenas de callos y lastimaduras.
+	Parecen de alguien que trabajo toda su vida en el campo.
+	do StoryManager.unlock_beat("corpse_hands_inspected")
+	=> END
+- Observar rostro.
+	Intentas retirar la mascara... Pareciera estar pegada con pegamento.
+	¿Por que harian esto?
+	do StoryManager.unlock_beat("corpse_glued_mask")
+	=> END
+- Inspeccionar en mas detalle.
+	if StoryManager.has_beat("thermo_obtained"):
+		- Usar termometro.
+			El cuerpo sigue tibio, el asesinato fue muy reciente.
+	else:
+		No observas ningun otro detalle particularmente interesante.
+
 => END

@@ -20,10 +20,10 @@ script = ExtResource("1_k1o1h")
 [node name="UI" parent="." unique_id=401532264 instance=ExtResource("1_1ca4w")]
 
 [node name="Backdrop" type="ColorRect" parent="." unique_id=1908437130]
-offset_left = -2301.0
-offset_top = -1472.0
-offset_right = 3294.0
-offset_bottom = 2260.0
+offset_left = -2095.0
+offset_top = -1512.0
+offset_right = 3500.0
+offset_bottom = 2220.0
 color = Color(0.02950659, 0.029506551, 0.029506536, 1)
 
 [node name="Map" type="Node2D" parent="." unique_id=710294103]
@@ -77,14 +77,25 @@ position = Vector2(201, 266)
 position = Vector2(-318, -317)
 scale = Vector2(0.22, 0.22)
 
+[node name="Exclamation" parent="Characters/ChefScene" index="1" unique_id=1012538910]
+position = Vector2(3, -500)
+scale = Vector2(4.17, 3.724)
+
 [node name="PianistaScene" parent="Characters" unique_id=1873722800 instance=ExtResource("7_vivmj")]
 position = Vector2(174, -423.00003)
 scale = Vector2(0.33, 0.33)
 dialogue = ExtResource("10_nkv1j")
 
+[node name="Exclamation" parent="Characters/PianistaScene" index="1" unique_id=648476831]
+position = Vector2(3, -391.6366)
+
 [node name="DueñoScene" parent="Characters" unique_id=683233417 instance=ExtResource("7_e0fli")]
 position = Vector2(809.99994, -213)
 scale = Vector2(0.57, 0.57)
+
+[node name="Exclamation" parent="Characters/DueñoScene" index="1" unique_id=897341659]
+position = Vector2(17.035156, -265.33353)
+scale = Vector2(3.035, 2.71)
 
 [node name="Player" parent="." unique_id=1591695807 instance=ExtResource("2_1odei")]
 position = Vector2(87, 196)
@@ -92,3 +103,6 @@ scale = Vector2(2.02, 2.02)
 
 [editable path="Objects/Corpse"]
 [editable path="Objects/LightSwitch"]
+[editable path="Characters/ChefScene"]
+[editable path="Characters/PianistaScene"]
+[editable path="Characters/DueñoScene"]

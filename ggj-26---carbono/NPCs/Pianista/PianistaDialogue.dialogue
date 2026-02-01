@@ -1,11 +1,50 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+do AudioManager.play_theme("LIAR",0.5)
+do play_anim("TALKING")
+
+Pianista: ...
+- Hola?
+Pianista: Dime.
+- ¿Quién eres?
+	Pianista: Soy la pianista de la mansión.
+	- ¿Quíen te contrato para trabajar aquí?
+	Pianista: El dueño de la mansión me contrato hace varios meses para que toque el piano durante las veladas.
+	do StoryManager.unlock_beat("pianist_contrated_by_lord")
+	if GlobalData.current_mask == GlobalData.MaskState.LYING_MASK:
+		- (Mentir) Todos parecen muy agradables aqui... ¿Opinas lo mismo?
+		Pianista: Si por supuesto, el dueño es muy amable y nunca fue agresivo conmigo.
+		do StoryManager.unlock_beat("pianist_likes_lord")
+		Pianista: El chef y el guardía parecen decentes tambien.
+		Pianista: La hija del dueño era una persona muy respetable y educada.
+		do StoryManager.unlock_beat("pianist_likes_daughter")
+	=> exit_dialogue
+- ¿Puedes decirme algo del muerto?
+	Pianista: Nada realmente, estaba tocando y cuando mire ya estaba así.
+	if StoryManager.has_beat("chef_outage_story"):
+		- Me dijeron que se corto la luz en un momento, vos seguiste tocando?
+		Pianista: Por supuesto que no, no puedo tocar el piano sin ver las teclas...
+		do StoryManager.unlock_beat("pianist_cant_play_dark")
+		=> exit_dialogue
+- No creo que sea necesario que sigas tocando.
+	Pianista: Lo pidio la cumpleañera. "No pares de tocar, no importa que pase en la fiesta".
+- *Observas su cuello.* ¿Qué son esas marcas?
+	Pianista: ¿Marcas? Ah, eh, me rasguñe con las cuerdas del piano. Nada importante
+	- Esos no parecen rasguños, parecen mas bien moretones.
+	Pianista: Ya te dije, fue un accidente con el piano. ¿Podemos hablar de otra cosa?
+	do StoryManager.unlock_beat("pianist_hurt")
+	=> exit_dialogue
+- *Intentar tocar el piano* ¿Puedo probar? Me se el feliz cumpleaños.
+	do play_anim("ANGRY")
+	Pianista: SACA LA MANO DE AHI CARAJO.
+	- Uy bueno perdon...  (se ve que no le gusta que toquen su piano...)
+	do StoryManager.unlock_beat("pianist_overprotective_piano")
+	=> exit_dialogue
+
+
+
+
+
+~ exit_dialogue
+do AudioManager.play_theme("GAMEPLAY",0.5)
+
 => END

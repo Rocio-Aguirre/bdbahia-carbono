@@ -1,6 +1,20 @@
 [gd_scene format=3 uid="uid://ca3ta1g6i40k6"]
 
 [ext_resource type="Script" uid="uid://cqjxktvpi67pt" path="res://Scenes/good_ending_screen.gd" id="1_wlgyi"]
+[ext_resource type="Texture2D" uid="uid://h7k2t5f7yg7n" path="res://Assets/UI/ganaste.png" id="2_tqakc"]
+[ext_resource type="FontFile" uid="uid://cgnf6vdcil3b2" path="res://Assets/UI/DK Crayon Crumble.ttf" id="3_e2jir"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30ony"]
+bg_color = Color(0.19793722, 0.19793725, 0.19793713, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="GoodEndingScreen" type="Control" unique_id=1126399072]
 layout_mode = 3
@@ -11,21 +25,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wlgyi")
 
-[node name="Label" type="Label" parent="." unique_id=303244152]
-layout_mode = 0
-offset_left = 525.0
-offset_top = 298.0
-offset_right = 617.0
-offset_bottom = 321.0
-text = "Sos un capo"
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1678188399]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tqakc")
+expand_mode = 1
 
-[node name="QuitButton" type="Button" parent="." unique_id=280776477]
+[node name="QuitButton" type="Button" parent="." unique_id=441377653]
 layout_mode = 0
-offset_left = 517.0
-offset_top = 353.0
-offset_right = 641.0
-offset_bottom = 384.0
-text = "Volver al menu
-"
+offset_left = 73.0
+offset_top = 62.0
+offset_right = 396.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_e2jir")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_30ony")
+text = "Salir al menu"
 
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
